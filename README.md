@@ -33,3 +33,9 @@ python3 -m http.server 8080 -d site
 ## 公開發布
 
 公開前請檢查 `QA.md` 與 `THIRD-PARTY.md`。本包沒有正式資料庫連線，但尚未通過實機瀏覽器畫面與完整互動測試。GitHub Pages 不處理 `.htaccess`；如需部署 CSP HTTP 標頭，請在託管平台另行設定。
+
+## 畫面預覽
+
+![OPEN OS 首頁桌機版](screenshots/home-desktop.png)
+![記事本](screenshots/notes.png)
+![OPEN OS 首頁手機版](screenshots/home-mobile.png)
