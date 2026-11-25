@@ -1,0 +1,145 @@
+/* OPEN OS v1.0.3: additive notification layout + home ticker + topbar controls. */
+.automation-phase1 .automation-notice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:stretch;min-width:0}
+.automation-phase1 .automation-notice-grid>.automation-notice{margin:0;min-width:0;display:flex;flex-direction:column;gap:4px;overflow-wrap:anywhere}
+.automation-phase1 .automation-notice-grid>.automation-empty{grid-column:1/-1}
+.automation-phase1 .automation-notice .section-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.automation-phase1 .automation-notice .section-head strong{min-width:0;overflow-wrap:anywhere}
+.automation-phase1 .automation-notice .section-head>button{flex-shrink:0}
+.automation-phase1 .automation-notice .automation-message{white-space:pre-line;overflow-wrap:anywhere}
+.automation-phase1 .automation-notice>small{margin-top:auto;padding-top:6px}
+.automation-notice-actions{display:inline-flex;align-items:center;gap:8px;flex-shrink:0}
+.automation-phase1 .automation-notice-actions small{white-space:nowrap}
+.automation-phase1 .notice-delete{color:var(--muted);font-size:var(--text-meta)}
+.automation-phase1 .notice-delete:hover{color:#a53838;border-color:#a53838}
+.automation-phase1 .phase2-inbox [data-phase2-notes]{margin-top:12px}
+/* Shared topbar controls; only one Home button exists. */
+.topbar-actions #notificationBell{order:3;position:relative;display:inline-flex;align-items:center;justify-content:center;font-size:var(--text-section-title)}
+.topbar-actions #notificationBell[hidden]{display:none}
+.notification-badge{position:absolute;top:-6px;right:-7px;min-width:19px;height:19px;border-radius:99px;padding:0 4px;background:#bd453b;color:white;font-size:var(--text-micro);line-height:19px;font-weight:600;text-align:center;box-shadow:0 0 0 2px var(--bg)}
+.notification-badge[hidden]{display:none}
+.notification-dropdown{position:fixed;right:clamp(12px,3vw,45px);top:76px;width:min(410px,calc(100vw - 24px));max-height:min(650px,calc(100vh - 95px));overflow:hidden;display:flex;flex-direction:column;background:var(--panel);color:var(--text);border:1px solid var(--line-strong);border-radius:17px;box-shadow:0 18px 50px rgba(0,0,0,.19);z-index:65}
+.notification-dropdown[hidden]{display:none}
+.notification-dropdown-head{display:flex;align-items:center;justify-content:space-between;padding:15px 17px;border-bottom:1px solid var(--line)}
+.notification-dropdown-head strong{font-size:var(--text-body)}
+.notification-dropdown-items{overflow-y:auto;overscroll-behavior:contain;padding:8px 12px;min-height:60px}
+.notification-dropdown-item{padding:12px 11px;border:1px solid var(--line);border-left:3px solid var(--line-strong);border-radius:11px;margin:8px 0;background:var(--panel);display:flex;flex-direction:column;gap:5px}
+.notification-dropdown-item.notification-kind--credit{border-left-color:var(--kind-credit);background:color-mix(in srgb,var(--kind-credit) 5%,var(--panel))}
+.notification-dropdown-item.notification-kind--travel{border-left-color:var(--kind-travel);background:color-mix(in srgb,var(--kind-travel) 5%,var(--panel))}
+.notification-dropdown-item.is-read{opacity:.78}
+.notification-dropdown-item .notification-kind{font-size:var(--text-micro);letter-spacing:.05em;font-weight:600;color:var(--muted)}
+.notification-dropdown-item strong{font-size:var(--text-label);line-height:1.5}
+.notification-dropdown-item p{font-size:var(--text-label);line-height:1.6;margin:0;white-space:pre-line;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.notification-dropdown-item small{font-size:var(--text-micro);color:var(--muted)}
+.notification-dropdown-actions{display:flex;justify-content:flex-end}
+.notification-dropdown-actions button{border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--panel);color:var(--text);padding:5px 10px;cursor:pointer;font-size:var(--text-meta)}
+.notification-dropdown-empty{font-size:var(--text-label);color:var(--muted);padding:16px 6px;line-height:1.6}
+.notification-all-link{width:100%;padding:14px;border:0;border-top:1px solid var(--line);background:var(--panel-2);color:var(--text);font-size:var(--text-label);font-weight:600;cursor:pointer}
+/* Ticker stays directly under greeting/world clock, above quick links. */
+.home-alert-ticker{display:flex;align-items:center;gap:12px;min-height:68px;margin:2px 0 20px;padding:12px 16px;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:13px;background:var(--panel);box-shadow:0 3px 12px rgba(0,0,0,.025);min-width:0}
+.home-alert-ticker[data-kind="credit"]{border-left-color:var(--kind-credit);background:color-mix(in srgb,var(--kind-credit) 4%,var(--panel))}
+.home-alert-ticker[data-kind="travel"]{border-left-color:var(--kind-travel);background:color-mix(in srgb,var(--kind-travel) 4%,var(--panel))}
+.home-alert-ticker-label{font-size:var(--text-meta);font-weight:600;white-space:nowrap;border-radius:var(--radius-sm);padding:7px 9px;background:var(--panel-2);color:var(--text)}
+.home-alert-ticker-content{flex:1;min-width:0;font-size:var(--text-small);font-weight:600;line-height:1.5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.home-alert-ticker-actions{display:flex;align-items:center;gap:5px;flex-shrink:0}
+.home-alert-ticker-actions button{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:var(--radius-sm);min-width:30px;min-height:30px;cursor:pointer}
+.home-alert-ticker-actions [data-ticker-count]{font-size:var(--text-micro);color:var(--muted);min-width:32px;text-align:center}
+.home-alert-ticker-actions .home-alert-ticker-open{font-size:var(--text-meta);padding:0 9px;white-space:nowrap}
+.home-ticker-layout-slot{grid-column:1/-1;min-width:0}
+.home-ticker-layout-slot .home-alert-ticker{margin:0}
+@media(max-width:780px){
+  .automation-phase1 .automation-notice-grid{grid-template-columns:minmax(0,1fr)}
+  .topbar{grid-template-columns:minmax(0,1fr) auto auto auto}
+  .topbar #notificationBell{grid-column:2;grid-row:1;order:0;justify-self:center;width:38px;height:38px;min-height:38px;min-width:38px}
+  .topbar #addBtn{grid-column:3;grid-row:1}
+  .topbar #menuBtn{grid-column:4;grid-row:1}
+  .notification-dropdown{top:calc(2 * var(--control-h) + var(--safe-top) + 16px);right:12px;max-height:calc(100vh - 140px)}
+  .home-alert-ticker{flex-wrap:wrap;gap:9px;padding:12px;min-height:76px}
+  .home-alert-ticker-content{flex-basis:calc(100% - 105px)}
+  .home-alert-ticker-actions{width:100%;justify-content:flex-end}
+}
+@media(prefers-reduced-motion:reduce){.home-alert-ticker{scroll-behavior:auto}}
+
+/* HOTFIX2: unified flat topbar actions and compact home ticker rhythm. */
+/* Scope to the four requested controls; account, edit-mode Save/Cancel, and other buttons stay unchanged. */
+:root body .topbar-actions :is(#notificationBell,#themeBtn,#addBtn){
+  box-sizing:border-box;
+  height:38px;
+  min-height:38px;
+  border:0;
+  border-bottom:0;
+  box-shadow:none;
+  background:transparent;
+  color:var(--text);
+  border-radius:9px;
+  transition:background-color 160ms ease,color 160ms ease;
+}
+:root body .topbar-actions :is(#notificationBell,#themeBtn){
+  width:38px;min-width:38px;padding:0;
+  display:inline-flex;align-items:center;justify-content:center;
+}
+:root body .topbar-actions #themeBtn{font-size:var(--text-section-title);line-height:1}
+:root body .topbar-actions #notificationBell svg{width:20px;height:20px;display:block}
+:root body .topbar-actions #addBtn{
+  padding:0 10px;
+  font-size:var(--text-small);
+  font-weight:600;
+  letter-spacing:0;
+  white-space:nowrap;
+}
+@media(hover:hover){
+  :root body .topbar-actions :is(#notificationBell,#themeBtn,#addBtn):hover{
+    background:var(--panel-2) !important;
+  }
+}
+:root body .topbar-actions :is(#notificationBell,#themeBtn,#addBtn):focus-visible{
+  outline:2px solid var(--brand);outline-offset:2px;
+}
+/* Without a saved custom home layout: make the space above and below the ticker equal. */
+#app:has(> .home-operational) > .home-operational{margin-bottom:12px}
+#app:has(> .home-operational) > .home-alert-ticker{margin:0 0 12px}
+/* With saved custom layout: use the same 12px rhythm in both directions. */
+#app .home-layout-grid{row-gap:12px}
+#app .home-layout-grid .home-layout-module > .home-operational{margin-bottom:0}
+#app .home-layout-grid .home-ticker-layout-slot{margin:0;min-width:0}
+#app .home-layout-grid .home-ticker-layout-slot .home-alert-ticker{margin:0}
+/* Ticker height reduced from 68px to 44px, without changing notification behavior. */
+#app .home-alert-ticker{
+  min-height:44px;
+  padding:5px 12px;
+  gap:10px;
+  border-radius:10px;
+}
+#app .home-alert-ticker-label{padding:5px 8px;font-size:var(--text-micro);border-radius:7px}
+#app .home-alert-ticker-content{font-size:var(--text-label);line-height:1.35}
+#app .home-alert-ticker-actions{gap:4px}
+#app .home-alert-ticker-actions button{min-width:28px;min-height:28px;border-radius:7px}
+#app .home-alert-ticker-actions .home-alert-ticker-open{padding:0 8px}
+@media(max-width:780px){
+  :root body .topbar-actions :is(#notificationBell,#themeBtn,#addBtn){min-height:38px;height:38px}
+  #app .home-alert-ticker{min-height:56px;padding:8px 10px;gap:7px}
+  #app .home-alert-ticker-content{flex-basis:calc(100% - 100px)}
+  #app .home-alert-ticker-actions{width:100%;justify-content:flex-end}
+  #app .home-layout-grid{row-gap:12px}
+}
+
+
+/* HOTFIX3: equal spacing around home ticker, slightly taller and easier to read. */
+/* Default layout: the same breathing room above and below the alert. */
+#app:has(> .home-operational) > .home-operational{margin-bottom:16px}
+#app:has(> .home-operational) > .home-alert-ticker{margin:0 0 16px}
+/* Customizable layout: use the same gap for header/ticker/next section. */
+#app .home-layout-grid{row-gap:16px}
+#app .home-layout-grid .home-ticker-layout-slot{margin:0}
+/* The overview's legacy bottom spacing stacks with the customizable grid gap. */
+#app:has(>.home-operational) .system-overview{margin-bottom:0;padding-bottom:0;border-bottom:0}
+#app:has(>.home-operational) > .system-overview + .home-month-card{margin-top:var(--space-4)}
+#app .home-alert-ticker{min-height:58px;padding:9px 14px;gap:12px}
+#app .home-alert-ticker-label{padding:7px 10px;font-size:var(--text-meta)}
+#app .home-alert-ticker-content{font-size:var(--text-small);line-height:1.45}
+#app .home-alert-ticker-actions button{min-height:32px;min-width:32px}
+@media(max-width:780px){
+  #app .home-layout-grid{row-gap:14px}
+  #app:has(> .home-operational) > .home-operational{margin-bottom:14px}
+  #app:has(> .home-operational) > .home-alert-ticker{margin-bottom:14px}
+  #app .home-alert-ticker{min-height:70px;padding:10px 12px;gap:8px}
+}

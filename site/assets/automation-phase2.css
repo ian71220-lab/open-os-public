@@ -1,0 +1,26 @@
+/* Phase 2 is scoped to the existing automation page and design tokens. */
+.automation-phase1 .phase2-header{
+  grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:14px;padding:20px 22px 8px;margin-top:12px;
+  border-top:1px solid var(--line)
+}
+.automation-phase1 .phase2-header h2{margin:0 0 5px;font-size:clamp(18px,2vw,23px)}
+.automation-phase1 .phase2-header p{margin:0;font-size:var(--text-small)}
+.automation-phase1 .phase2-group>[data-phase2-status]{grid-column:1/-1;margin:0 22px 8px}
+.automation-phase1 .phase2-rule-grid{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.automation-phase1 .phase2-rule-grid .operational-rule{min-width:0;padding:20px;display:flex;flex-direction:column;gap:9px}
+.automation-phase1 .phase2-rule-grid .operational-rule .section-head{align-items:flex-start}
+.automation-phase1 .phase2-rule-grid .operational-rule h2{font-size:var(--text-card-title)}
+.automation-phase1 .phase2-rule-grid .operational-rule p{margin:0}
+.automation-phase1 .phase2-rule-grid [data-phase2-result]{white-space:pre-line;overflow-wrap:anywhere}
+.automation-phase1 .phase2-inbox{margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
+.automation-phase1 .phase2-inbox h3{margin:0 0 6px;font-size:var(--text-card-title)}
+.automation-phase1 .phase2-inbox>.muted{margin:0 0 14px;font-size:var(--text-small)}
+.automation-phase1 .phase2-inbox .automation-message{white-space:pre-line}
+.automation-phase1 .phase2-inbox [data-phase2-more]{margin-top:12px}
+@media(max-width:780px){
+  .automation-phase1 .phase2-rule-grid{grid-template-columns:minmax(0,1fr)}
+  .automation-phase1 .phase2-header{padding-inline:4px}
+  .automation-phase1 .phase2-group>[data-phase2-status]{margin-inline:4px}
+  .automation-phase1 .phase2-header button{width:100%}
+}

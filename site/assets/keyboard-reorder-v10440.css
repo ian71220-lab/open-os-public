@@ -1,0 +1,4 @@
+/* v1.0.4.40: the ⠿ handle is a real button (keyboard reachable), so it needs a button reset that keeps its look. */
+button.travel-drag-handle{appearance:none;padding:0;border:0;border-radius:6px;background:none;font:inherit;line-height:1;cursor:grab}
+button.travel-drag-handle:hover{color:var(--text)}
+button.travel-drag-handle:focus-visible{outline:2px solid var(--brand);outline-offset:2px;color:var(--text)}

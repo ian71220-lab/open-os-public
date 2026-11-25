@@ -1,0 +1,112 @@
+/* Operational B revision: visual composition only, using Phase 1 tokens. */
+#app:has(>.home-operational) .home-tags{padding-block:var(--space-3);background:transparent;border:0;border-radius:0;margin-block:0 var(--space-5)}
+#app:has(>.home-operational) .home-tags .overview-heading{align-items:flex-start;flex-direction:column;gap:var(--space-1)}
+#app:has(>.home-operational) .home-tags .eyebrow{display:none}
+#app:has(>.home-operational) .system-overview{padding-bottom:var(--space-5);border-bottom:thin solid var(--line)}
+#app:has(>.home-operational) .overview-card{background:transparent;border-color:transparent;padding:var(--space-3);border-radius:var(--radius-md)}
+#app:has(>.home-operational) .overview-card.needs-attention{border-color:var(--brand);background:var(--panel)}
+#app:has(>.home-operational) .overview-copy small{font-size:var(--text-small)}
+#app:has(>.home-operational) .overview-card>strong{font-size:var(--text-card-title);color:var(--muted)}
+#app:has(>.home-operational) .brief-panel{padding:var(--space-6);border-top:var(--space-1) solid var(--brand);background:var(--panel);box-shadow:var(--shadow-panel)}
+#app:has(>.home-operational) .brief-title{font-size:var(--text-display);line-height:var(--leading-heading);margin-block:var(--space-5) var(--space-4);letter-spacing:normal}
+#app:has(>.home-operational) .brief-summary{font-size:var(--text-body-lg);line-height:var(--leading-copy);padding-bottom:var(--space-5);border-bottom:thin solid var(--line)}
+#app:has(>.home-operational) .brief-counts{gap:var(--space-4);margin-block:var(--space-5)}
+#app:has(>.home-operational) .brief-counts>div{border:0;border-radius:0;background:transparent;padding:var(--space-2) 0}
+#app:has(>.home-operational) .brief-counts strong{font-size:var(--text-display);line-height:var(--leading-tight);font-variant-numeric:tabular-nums}
+#app:has(>.home-operational) .brief-counts span{font-size:var(--text-small);font-weight:normal;margin-top:var(--space-2)}
+#app:has(>.home-operational) .brief-counts>div:nth-child(3) strong{color:var(--danger)}
+#app:has(>.home-operational) .brief-counts>div:nth-child(4) strong{color:var(--brand)}
+#app:has(>.home-operational) .brief-list{padding:var(--space-4);background:var(--panel-2);border-radius:var(--radius-md)}
+#app:has(>.home-operational) .brief-list-group h3{font-size:var(--text-small)}
+#app:has(>.home-operational) .dashboard-col+.dashboard-col>.panel{background:var(--panel-2);border-color:transparent}
+#app:has(>.home-operational) .dashboard-col+.dashboard-col .section-head h2{font-size:var(--text-card-title)}
+#app:has(>.home-operational) .home-month-card{box-shadow:none;border-radius:var(--radius-lg)}
+#app:has(>.routines-operational) .routine-panel{padding:var(--space-5);border-top:var(--space-1) solid var(--brand);box-shadow:var(--shadow-panel)}
+#app:has(>.routines-operational) .routine-panel>.section-head{align-items:center;gap:var(--space-4);margin-bottom:var(--space-4)}
+#app:has(>.routines-operational) .routine-panel>.section-head h2{flex:1;font-size:var(--text-section-title);line-height:var(--leading-heading)}
+#app:has(>.routines-operational) .routine-panel>.section-head>span{font-size:var(--text-display);line-height:var(--leading-tight);color:var(--brand);font-weight:bold}
+#app:has(>.routines-operational) progress{height:var(--space-3)}
+#app:has(>.routines-operational) .routine-items{margin-block:var(--space-5)}
+#app:has(>.routines-operational) .checklist-view{padding-block:var(--space-3);font-size:var(--text-body);font-weight:normal}
+#app:has(>.routines-operational) .checklist-view.checked{background:var(--panel-2);color:var(--muted)}
+#app:has(>.routines-operational) .routine-actions{padding-top:var(--space-4)}
+#app:has(>.tasks-operational) .task-groups>.panel{background:var(--panel-2);border-color:transparent;padding:var(--space-5)}
+#app:has(>.tasks-operational) .task-groups .section-head{margin-bottom:var(--space-5);align-items:center}
+#app:has(>.tasks-operational) .task-groups .section-head h2{font-size:var(--text-section-title)}
+#app:has(>.tasks-operational) .task-count{font-size:var(--text-display);line-height:var(--leading-tight);color:var(--text);font-weight:bold}
+#app:has(>.tasks-operational) .task-list{gap:var(--space-3)}
+#app:has(>.tasks-operational) .task-item{padding:var(--space-4);border-inline-start-width:var(--space-1);border-inline-start-color:var(--line);box-shadow:none}
+#app:has(>.tasks-operational) .task-item strong{font-size:var(--text-card-title);line-height:var(--leading-heading)}
+#app:has(>.tasks-operational) .item-meta{margin-top:var(--space-2)}
+#app:has(>.tasks-operational) .task-due{margin-top:var(--space-2);font-weight:bold}
+#app:has(>.tasks-operational) [data-due-state="overdue"]{border-inline-start-color:var(--danger);border-block-color:var(--danger);background:var(--panel);box-shadow:var(--shadow-panel)}
+#app:has(>.tasks-operational) [data-due-state="today"]{border-inline-start-color:var(--brand);background:var(--panel)}
+#app:has(>.tasks-operational) [data-due-state="upcoming"],
+#app:has(>.tasks-operational) [data-due-state="unscheduled"]{background:var(--panel-2)}
+#app:has(>.tasks-operational)>.section{background:transparent;border-color:var(--line);box-shadow:none}
+#app:has(>.tasks-operational)>.section .section-head h2{color:var(--muted);font-size:var(--text-card-title)}
+#app:has(>.tasks-operational) [data-due-state="closed"]{background:transparent;border-color:transparent;border-bottom-color:var(--line);border-radius:0}
+#app:has(>.tasks-operational) [data-due-state="closed"] strong{font-size:var(--text-body);font-weight:normal;color:var(--muted)}
+@media(max-width:780px){
+  #app:has(>.home-operational) .brief-panel,
+  #app:has(>.routines-operational) .routine-panel,
+  #app:has(>.tasks-operational) .task-groups>.panel{padding:var(--space-4)}
+  #app:has(>.home-operational) .brief-title{font-size:var(--text-section-title)}
+  #app:has(>.routines-operational) .routine-panel>.section-head>span{font-size:var(--text-section-title)}
+  #app:has(>.tasks-operational) .task-item{padding:var(--space-3)}
+}
+@media(hover:hover) and (pointer:fine){
+  #app:has(>.home-operational) .overview-card:hover{background:var(--panel);border-color:var(--line-strong);box-shadow:var(--shadow-panel)}
+}
+
+/* Dashboard overview: one quiet workspace surface instead of eight isolated cards. */
+#app:has(>.home-operational) .home-tags{padding-block:var(--space-2);margin-bottom:var(--space-3)}
+#app:has(>.home-operational) .home-tags .overview-heading{margin-bottom:var(--space-2)}
+#app:has(>.home-operational) .system-overview{margin-bottom:var(--space-5);padding-bottom:var(--space-5)}
+#app:has(>.home-operational) .system-overview>.overview-heading{align-items:flex-start;flex-direction:column;gap:var(--space-1);margin-bottom:var(--space-3)}
+#app:has(>.home-operational) .system-overview>.overview-heading>span{margin:0;max-width:100%;text-align:left}
+#app:has(>.home-operational) .overview-grid{gap:0;padding:var(--space-2);border:thin solid var(--line);border-radius:var(--radius-lg);background:var(--panel-2)}
+#app:has(>.home-operational) .overview-card{grid-template-columns:auto minmax(0,1fr) auto;gap:var(--space-2);min-width:0;min-height:0;padding:var(--space-3);border:thin solid transparent;border-radius:0;background:transparent}
+#app:has(>.home-operational) .overview-card:not(:nth-child(4n)){border-right-color:var(--line)}
+#app:has(>.home-operational) .overview-card:nth-child(-n+4){border-bottom-color:var(--line)}
+#app:has(>.home-operational) .overview-icon{width:var(--space-6);height:var(--space-6);border-radius:var(--radius-sm);background:var(--panel);color:var(--muted)}
+#app:has(>.home-operational) .overview-copy{min-width:0}
+#app:has(>.home-operational) .overview-copy b{font-size:var(--text-small)}
+#app:has(>.home-operational) .overview-copy small{font-size:var(--text-meta);margin-top:var(--space-1)}
+#app:has(>.home-operational) .overview-card>strong{grid-column:auto;font-size:var(--text-card-title);color:var(--text);font-variant-numeric:tabular-nums}
+#app:has(>.home-operational) .overview-card.needs-attention{border-color:var(--brand);border-radius:var(--radius-sm)}
+@media(max-width:1200px){
+  #app:has(>.home-operational) .overview-card:not(:nth-child(4n)){border-right-color:transparent}
+  #app:has(>.home-operational) .overview-card:nth-child(-n+4){border-bottom-color:transparent}
+  #app:has(>.home-operational) .overview-card:nth-child(odd){border-right-color:var(--line)}
+  #app:has(>.home-operational) .overview-card:nth-child(-n+6){border-bottom-color:var(--line)}
+}
+@media(max-width:780px){
+  #app:has(>.home-operational) .overview-grid{gap:0;padding:var(--space-1)}
+  #app:has(>.home-operational) .overview-card{grid-template-columns:auto minmax(0,1fr);gap:var(--space-2);padding:var(--space-2);align-content:center}
+  #app:has(>.home-operational) .overview-card>strong{grid-column:2;font-size:var(--text-card-title)}
+  #app:has(>.home-operational) .overview-copy small{font-size:var(--text-meta)}
+}
+
+/* Home metric alignment; owned here since v0.9.9.4. */
+#app:has(>.home-operational) .brief-counts .brief-metric-value{display:flex;align-items:center;gap:var(--space-2);min-width:0}
+#app:has(>.home-operational) .brief-counts .brief-metric-value .ui-icon{float:none;flex:none;width:var(--space-5);height:var(--space-5);margin:0;color:var(--muted)}
+#app:has(>.home-operational) .brief-counts .brief-metric-value strong{display:block;margin:0}
+#app:has(>.home-operational) .brief-counts>div>span{display:block;margin-top:var(--space-2)}
+
+/* Automation management: scoped feature layout using existing controls/tokens. */
+.automation-phase1,.automation-phase1 .operational-rule {min-width:0}
+.automation-phase1 .automation-rule-group {display:contents}
+.automation-phase1 .section-actions {display:flex;flex-wrap:wrap;gap:var(--space-2)}
+.automation-phase1 .section-head {flex-wrap:wrap;gap:var(--space-2)}
+.automation-phase1 h2,.automation-phase1 p,.automation-phase1 dd {overflow-wrap:anywhere}
+.automation-meta {display:grid;grid-template-columns:auto minmax(0,1fr);gap:var(--space-2);font-size:var(--text-label)}
+.automation-meta dd {margin:0;min-width:0}.automation-meta dt {color:var(--muted)}
+.automation-history-row {border-bottom:1px solid var(--line);padding-block:var(--space-3);overflow-wrap:anywhere}
+.automation-message {white-space:pre-wrap}
+.automation-editor {width:min(100%,640px);max-height:90vh;max-height:90dvh;overflow:auto;box-sizing:border-box}
+.automation-editor form {display:grid;gap:var(--space-3);min-width:0}
+.automation-editor label {min-width:0}.automation-editor input,.automation-editor select,.automation-editor textarea {min-width:0;max-width:100%;box-sizing:border-box}
+.automation-editor [hidden],.automation-phase1 [hidden] {display:none!important}
+.automation-editor .modal-actions {flex-wrap:wrap}
+@media(max-width:780px){.automation-editor .field-grid.two {grid-template-columns:minmax(0,1fr)}.automation-phase1 .automation-grid {grid-template-columns:minmax(0,1fr)}}

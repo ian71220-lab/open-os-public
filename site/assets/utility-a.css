@@ -1,0 +1,146 @@
+/* Phase 4: data-first surfaces, scoped to Utility A views. */
+#app:has(>.utility-page)>.page-head{margin-bottom:var(--space-4)}
+#app:has(>.utility-page)>.filter-bar{margin:var(--space-3) 0 var(--space-4);gap:var(--space-2)}
+#app:has(>.utility-page) .page-subtitle{max-width:70ch}
+#app:has(>.utility-page) .empty-state{padding:var(--space-6);box-shadow:none}
+
+/* Settings and Categories: one grouped list, with quiet counts and clear actions. */
+#app:has(>.utility-settings)>.panel{
+  padding:var(--space-3) var(--space-5);border:thin solid var(--line);
+  border-radius:var(--radius-lg);background:var(--panel);box-shadow:none;
+}
+#app:has(>.utility-settings) .category-setting-row{
+  grid-template-columns:var(--space-6) minmax(0,1fr) auto auto;
+  gap:var(--space-3);padding:var(--space-3) 0;
+}
+#app:has(>.utility-settings) .category-setting-row strong{font-size:var(--text-body);line-height:var(--leading-body)}
+#app:has(>.utility-settings) .category-setting-row>span:nth-last-child(2){font-size:var(--text-small)}
+#app:has(>.utility-settings) .category-symbol{font-size:var(--text-card-title);text-align:center}
+
+/* Communications and Bookmarks: aligned headers, compact readable rows. */
+#app:has(>.utility-communications) .table-scroll,
+#app:has(>.utility-bookmarks) .bookmark-table-wrap{
+  border:thin solid var(--line);border-radius:var(--radius-lg);
+  background:var(--panel);box-shadow:none;overflow-x:auto;
+}
+#app:has(>.utility-communications) .comm-table{
+  min-width:0;border:0;border-radius:0;box-shadow:none;
+}
+#app:has(>.utility-communications) .comm-table th,
+#app:has(>.utility-bookmarks) .bookmark-table th{
+  padding:var(--space-3) var(--space-4);color:var(--muted);
+  font-size:var(--text-label);line-height:var(--leading-heading);
+  border-bottom:thin solid var(--line);
+}
+#app:has(>.utility-communications) .comm-table td,
+#app:has(>.utility-bookmarks) .bookmark-table td{
+  padding:var(--space-3) var(--space-4);font-size:var(--text-body);
+  line-height:var(--leading-body);vertical-align:middle;
+  border-bottom:thin solid var(--line);
+}
+#app:has(>.utility-communications) .comm-table td:first-child,
+#app:has(>.utility-communications) .comm-table td:nth-child(5),
+#app:has(>.utility-communications) .comm-table td:nth-child(6){white-space:nowrap;font-variant-numeric:tabular-nums}
+#app:has(>.utility-communications) .comm-table td:nth-child(4){min-width:0;overflow-wrap:anywhere}
+#app:has(>.utility-communications) .comm-table .item-meta{font-size:var(--text-small);color:var(--muted)}
+#app:has(>.utility-bookmarks) .bookmark-table-wrap{min-width:0}
+#app:has(>.utility-bookmarks) .bookmark-table td:nth-child(3){overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#app:has(>.utility-bookmarks) .bookmark-table td:nth-child(3) a{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#app:has(>.utility-bookmarks) .bookmark-table td:nth-child(4){white-space:nowrap}
+#app:has(>.utility-bookmarks) .bookmark-actions{gap:var(--space-2)}
+
+/* Graph collections and relationship editor: rows instead of nested surfaces. */
+#app:has(>.utility-graph)>.project-grid{grid-template-columns:1fr;gap:0}
+#app:has(>.utility-graph) .project-card{
+  min-height:0;padding:var(--space-4) 0;border:0;border-bottom:thin solid var(--line);
+  border-radius:0;background:transparent;box-shadow:none;
+}
+#app:has(>.utility-graph) .project-card h2{
+  margin:var(--space-2) 0;font-size:var(--text-card-title);line-height:var(--leading-heading);
+}
+#app:has(>.utility-graph) .project-card p{font-size:var(--text-small)}
+#app:has(>.utility-graph) .project-open{padding-top:var(--space-3)}
+#app:has(>.utility-graph) .project-card:hover{transform:none;box-shadow:none}
+#app>.project-hero.utility-graph{
+  margin:var(--space-5) 0;padding:var(--space-5);border-radius:var(--radius-lg);
+  box-shadow:none;
+}
+#app:has(>.utility-graph) .relation-list{gap:0}
+#app:has(>.utility-graph) .relation-row{
+  gap:var(--space-3);padding:var(--space-3) 0;border:0;
+  border-bottom:thin solid var(--line);border-radius:0;
+  background:transparent;box-shadow:none;
+}
+#app:has(>.utility-graph) .relation-node{min-width:0;padding:0;border-radius:0;background:transparent}
+#app:has(>.utility-graph) .relation-node span,
+#app:has(>.utility-graph) .relation-link small{font-size:var(--text-small);color:var(--muted)}
+#app:has(>.utility-graph) .relation-node b{font-size:var(--text-body);overflow-wrap:anywhere}
+#app:has(>.utility-graph) .relation-link strong{font-size:var(--text-body)}
+.utility-editor form{gap:var(--space-4)}
+.utility-editor .modal-header{
+  margin-bottom:var(--space-5);padding-bottom:var(--space-4);
+  border-bottom:thin solid var(--line);
+}
+.utility-editor label>span{font-size:var(--text-label);color:var(--muted)}
+
+/* Credit Cards: numerical fields align without nested mini cards. */
+#app:has(>.utility-credit) .credit-card-grid{gap:var(--space-4)}
+#app:has(>.utility-credit) .credit-card-preview{
+  min-width:0;min-height:0;padding:var(--space-5);
+  border:thin solid var(--line);border-radius:var(--radius-lg);box-shadow:none;
+}
+#app:has(>.utility-credit) .credit-card-preview h2{
+  font-size:var(--text-card-title);margin:var(--space-2) 0 var(--space-4);
+}
+#app:has(>.utility-credit) .card-last-four{font-family:var(--font-mono);font-size:var(--text-body-lg);letter-spacing:normal}
+#app:has(>.utility-credit) .card-finance-grid{
+  gap:0;margin:var(--space-4) 0;border-top:thin solid var(--line);
+}
+#app:has(>.utility-credit) .card-finance-grid>div{
+  min-width:0;padding:var(--space-3) 0;border:0;border-bottom:thin solid var(--line);
+  border-radius:0;background:transparent;
+}
+#app:has(>.utility-credit) .card-finance-grid small{font-size:var(--text-label);color:var(--muted)}
+#app:has(>.utility-credit) .card-finance-grid b{
+  font-size:var(--text-body);font-variant-numeric:tabular-nums;overflow-wrap:anywhere;
+}
+#app:has(>.utility-credit) .credit-card-preview p{
+  min-height:0;margin:var(--space-4) 0;font-size:var(--text-small);
+  line-height:var(--leading-body);overflow-wrap:anywhere;
+}
+
+/* The Home Assets workspace stays inside its own iframe. */
+#app:has(>.utility-assets) .embedded-app-shell{
+  border-radius:var(--radius-lg);box-shadow:none;
+  background:var(--panel);
+}
+
+@media(hover:hover) and (pointer:fine){
+  #app:has(>.utility-communications) .comm-table tbody tr:hover,
+  #app:has(>.utility-bookmarks) .bookmark-table tbody tr:hover,
+  #app:has(>.utility-settings) .category-setting-row:hover,
+  #app:has(>.utility-graph) .relation-row:hover,
+  #app:has(>.utility-graph) .project-card:hover{background:var(--panel-2)}
+}
+#app:has(>.utility-communications) .comm-table tbody tr:focus-visible,
+#app:has(>.utility-bookmarks) .bookmark-table :is(a,button):focus-visible,
+#app:has(>.utility-graph) :is(.project-card,.relation-row button):focus-visible{
+  outline:thin solid var(--brand);outline-offset:var(--space-1);
+}
+
+@media(max-width:780px){
+  #app:has(>.utility-communications) .comm-table{min-width:100%}
+  #app:has(>.utility-communications) .comm-table th,
+  #app:has(>.utility-communications) .comm-table td{white-space:nowrap}
+  #app:has(>.utility-communications) .comm-table th:nth-child(4),
+  #app:has(>.utility-communications) .comm-table td:nth-child(4){min-width:70ch;white-space:normal}
+  #app:has(>.utility-graph) .relation-row{grid-template-columns:1fr;gap:var(--space-2)}
+  #app:has(>.utility-credit) .credit-card-preview{padding:var(--space-4)}
+  #app:has(>.utility-assets) .embedded-app-shell{border-radius:0}
+}
+@media(max-width:600px){
+  #app:has(>.utility-settings)>.panel{padding:var(--space-3)}
+  #app:has(>.utility-settings) .category-setting-row{grid-template-columns:var(--space-5) minmax(0,1fr) auto auto;gap:var(--space-2)}
+  #app:has(>.utility-bookmarks) .bookmark-table th,
+  #app:has(>.utility-bookmarks) .bookmark-table td{padding:var(--space-3) var(--space-2)}
+}

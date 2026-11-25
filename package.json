@@ -1,0 +1,1 @@
+{"name":"open-os-public-mirror","version":"1.0.4.45","private":false,"license":"MIT","scripts":{"stamp":"node tools/stamp-assets.cjs","test":"node tests/demo-integrity.cjs","serve":"python3 -m http.server 8080 -d site"}}

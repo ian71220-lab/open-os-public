@@ -1,0 +1,14 @@
+/* Daily itinerary: three stacked time sections and a full-width notes area. */
+.planning-overlay .travel-day-highlight{display:grid;gap:8px;margin-bottom:22px}
+.planning-overlay .travel-day-highlight input{width:100%;min-width:0}
+.planning-overlay .travel-day-period-grid,
+#app .travel-day-period-grid{grid-template-columns:minmax(0,1fr)}
+.planning-overlay .travel-day-period-grid{gap:18px}
+.planning-overlay .travel-day-fields{margin-top:22px}
+.planning-overlay .travel-day-notes{display:grid;gap:8px;margin-top:20px;width:100%}
+.planning-overlay .travel-day-notes textarea{width:100%;min-height:150px;box-sizing:border-box}
+#app .travel-day-highlight-view{margin:18px 0;padding:18px;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--panel-2)}
+#app .travel-day-highlight-view strong{display:block;color:var(--text)}
+#app .travel-day-highlight-view p{margin:8px 0 0;white-space:pre-wrap;overflow-wrap:anywhere}
+#app .travel-day-details .travel-day-notes-view{grid-column:1/-1}
+@media(max-width:780px){.planning-overlay .travel-day-fields{grid-template-columns:minmax(0,1fr)}}

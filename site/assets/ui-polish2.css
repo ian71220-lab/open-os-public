@@ -1,0 +1,15 @@
+/* v0.9.7 UI Polish 2: scoped presentation changes only. */
+
+/* The travel action keeps its existing position and shared button dimensions. */
+#app:has(> .travel-back) .travel-trip-hero #editTrip {
+  flex: none;
+  width: max-content;
+  max-width: 100%;
+  white-space: nowrap;
+  padding-inline: var(--space-4);
+  line-height: var(--leading-heading);
+}
+
+/* Neutral navigation surface; shared tokens own both themes. */
+.sidebar{background:var(--panel);border-right-color:var(--line)}
+.sidebar .icon-btn{background:var(--panel-2);color:var(--text);border-color:var(--line)}

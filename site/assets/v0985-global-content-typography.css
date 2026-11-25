@@ -1,0 +1,206 @@
+/* v0.9.8.10 — one standard and one vertical rhythm for rendered content. */
+:root{
+  --content-font-size:var(--text-body);
+  --content-leading:1.5;
+  --content-paragraph-space:.6em;
+  --content-list-space:.5em;
+  --content-list-item-space:.2em;
+  --content-heading-space-before:1em;
+  --content-heading-space-after:.45em;
+}
+
+/* This layer owns rendered-content typography only; modules still own layout. */
+#app :is(
+  .content-body,.rich-content,.content-prose,.detail-content,.detail-description,
+  .entry-prose,.entry-block,.entry-summary,.project-description,.prompt-desc,.prompt-box,
+  .video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,
+  .travel-details dd,.flight-detail .content-prose,.timestamp-row>div,
+  .item-card>p,.prompt-card-body>p,.video-card-body>p,.project-card>p,
+  .automation-card>p,.asset-card-main>p,
+  .comm-table td:nth-child(4) .item-meta,.checklist-view>span,.trip-task>span
+),
+.modal-backdrop :is(
+  .content-body,.rich-content,.content-prose,.detail-content,.detail-description,
+  .entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,
+  .video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,
+  .travel-details dd,.timestamp-row>div
+),
+.prompt-modal :is(.prompt-desc,.prompt-box),
+.video-modal :is(.detail-description,.timestamp-row>div),
+.credit-card-detail :is(.credit-rich-content,.credit-detail-highlights li),
+.vendor-modal .vendor-notes>div{
+  font-size:var(--content-font-size)!important;
+  line-height:var(--content-leading)!important;
+}
+
+/*
+ * Some legacy content wrappers are grids. Their row gaps used to stack on top
+ * of paragraph/list margins and made identical content look different between
+ * modules. Vertical rhythm now comes from the shared child margins only.
+ */
+#app :is(
+  .content-body,.rich-content,.content-prose,.detail-content,.detail-description,
+  .entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,
+  .video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,
+  .travel-details dd,.timestamp-row>div
+),
+.modal-backdrop :is(
+  .content-body,.rich-content,.content-prose,.detail-content,.detail-description,
+  .entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,
+  .video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,
+  .travel-details dd,.timestamp-row>div
+){
+  row-gap:0;
+}
+
+/* Contextual matches replace older high-specificity module rules. */
+#app .editorial-detail :is(.detail-description,.detail-content),
+#app .timeline-card :is(.entry-prose,.entry-block),
+#app .travel-trip-hero :is(p,.content-prose),
+#app .travel-day-panel .travel-details dd,
+#app .flight-card .flight-detail :is(p,.content-prose),
+.prompt-modal .editorial-prompt :is(.prompt-desc,.prompt-box),
+.video-modal .editorial-video :is(.detail-description,.timestamp-row>div),
+.credit-card-detail .credit-detail-section .credit-rich-content,
+.vendor-modal .vendor-notes .content-prose{
+  font-size:var(--content-font-size);
+  line-height:var(--content-leading);
+}
+
+/* Paragraphs and equivalent prose blocks share one compact rhythm. */
+#app :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div) :is(p,blockquote,pre),
+.modal-backdrop :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div) :is(p,blockquote,pre),
+.credit-card-detail .credit-rich-content :is(p,blockquote,pre),
+.vendor-modal .vendor-notes .content-prose :is(p,blockquote,pre){
+  font-size:var(--content-font-size);
+  line-height:var(--content-leading);
+  margin-block:0 var(--content-paragraph-space);
+}
+
+/* Lists, including nested Markdown lists. */
+#app :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div) :is(ul,ol),
+.modal-backdrop :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div) :is(ul,ol),
+.credit-card-detail :is(.credit-rich-content,.credit-detail-highlights) :is(ul,ol),
+.vendor-modal .vendor-notes .content-prose :is(ul,ol){
+  margin-block:var(--content-list-space);
+  padding-inline-start:1.5em;
+  row-gap:0;
+}
+
+#app :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div) li,
+.modal-backdrop :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div) li,
+.credit-card-detail :is(.credit-rich-content,.credit-detail-highlights) li,
+.vendor-modal .vendor-notes .content-prose li{
+  font-size:var(--content-font-size);
+  line-height:var(--content-leading);
+  margin-block:0 var(--content-list-item-space);
+}
+
+#app :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div) li>p,
+.modal-backdrop :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div) li>p,
+.credit-card-detail :is(.credit-rich-content,.credit-detail-highlights) li>p,
+.vendor-modal .vendor-notes .content-prose li>p{
+  margin:0;
+  font-size:inherit;
+  line-height:inherit;
+}
+
+/* Semantic renderer: the final paragraph should not add trailing wrapper space. */
+#app :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div)>p:last-child,
+.modal-backdrop :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div)>p:last-child{
+  margin-bottom:0;
+}
+
+#app :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div) li :is(ul,ol),
+.modal-backdrop :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div) li :is(ul,ol){
+  margin-block:var(--content-list-item-space) var(--content-list-space);
+}
+
+/* Content headings keep their scale while sharing one vertical rhythm. */
+#app :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div) :is(h1,h2,h3,h4,h5,h6),
+.modal-backdrop :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div) :is(h1,h2,h3,h4,h5,h6){
+  line-height:var(--leading-heading);
+  margin-block:var(--content-heading-space-before) var(--content-heading-space-after);
+}
+
+#app :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div)>:is(h1,h2,h3,h4,h5,h6):first-child,
+.modal-backdrop :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div)>:is(h1,h2,h3,h4,h5,h6):first-child{
+  margin-top:0;
+}
+
+/* Rich blocks retain module-owned width and padding, not browser typography. */
+#app :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div) blockquote,
+.modal-backdrop :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div) blockquote{
+  padding-inline-start:var(--space-3);
+}
+
+#app :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div) :is(.rich-table-scroll,table,th,td,caption),
+.modal-backdrop :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div) :is(.rich-table-scroll,table,th,td,caption),
+.credit-card-detail .credit-rich-content :is(table,th,td,caption){
+  font-size:var(--content-font-size);
+  line-height:var(--content-leading);
+}
+
+#app :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div) .rich-table-scroll,
+.modal-backdrop :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div) .rich-table-scroll{
+  margin-block:var(--content-list-space) var(--content-paragraph-space);
+}
+
+#app :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div) caption,
+.modal-backdrop :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div,.travel-details dd,.timestamp-row>div) caption{
+  margin-bottom:var(--content-list-item-space);
+}
+
+/* Legacy renderer fallback only. New Rich Editor lists use semantic ul/ol/li. */
+#app .timeline-card .entry-prose{row-gap:0}
+#app .timeline-card .entry-block ul{row-gap:0}
+#app .timeline-card .project-prose-row,
+#app .timeline-card .project-prose-row>b,
+#app .timeline-card .project-prose-row>span,
+#app .timeline-card .entry-block :is(li,p),
+#app .routine-items .checklist-view>span,
+#app .preview-checklist .checklist-view>span,
+#app .period-preview .trip-task>span,
+#app .comm-table td:nth-child(4) .item-meta{
+  font-size:var(--content-font-size)!important;
+  line-height:var(--content-leading)!important;
+}
+
+#app :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div) .rich-bullet,
+.modal-backdrop :is(.content-body,.rich-content,.content-prose,.detail-content,.detail-description,.entry-prose,.entry-block,.project-description,.prompt-desc,.prompt-box,.video-notes,.rich-preview,.credit-rich-content,.vendor-notes>div) .rich-bullet{
+  display:block;
+  margin:0 0 var(--content-list-item-space);
+  font-size:var(--content-font-size);
+  line-height:var(--content-leading);
+}
+
+/* Single-node previews are content roots rather than wrappers. */
+#app :is(.item-card>p,.prompt-card-body>p,.video-card-body>p,.project-card>p,.entry-summary,.travel-trip-hero p,.automation-card>p,.asset-card-main>p,.comm-table td:nth-child(4) .item-meta,.checklist-view>span,.trip-task>span),
+#app:has(>.travel-operational) .checklist-view p{
+  font-size:var(--content-font-size)!important;
+  line-height:var(--content-leading)!important;
+  margin-block:0 var(--content-paragraph-space)!important;
+}
+
+/* Explicit empty editor lines occupy one normal line, without paragraph margins. */
+#app p.rich-empty-line, .modal-backdrop p.rich-empty-line {
+  margin:0;
+  min-height:1.5em;
+}
+
+/*
+ * Task, agenda and communication rows: item meta line.
+ * Desktop keeps the 14px content size; phones (≤600px) use 12px. Plain rules, no !important:
+ * the selector outranks the generic .item-meta rules and wins over operational-lists.css.
+ */
+#app :is(.task-item,.agenda-item,.comm-item) .item-meta{
+  font-size:var(--content-font-size);
+  line-height:var(--content-leading);
+  margin-block:0 var(--content-paragraph-space);
+}
+@media (max-width:600px){
+  #app :is(.task-item,.agenda-item,.comm-item) .item-meta{
+    font-size:var(--text-label);
+    line-height:18px;
+  }
+}

@@ -1,0 +1,35 @@
+/* Contrast pass: text colours that measured below WCAG AA 4.5:1 on their real backgrounds.
+   Hue is kept; only lightness moves. Light rules use :not([data-theme="dark"]).
+   v1.0.4.39: the measured values now live as named tokens here, so a future contrast fix changes one line. */
+:root:not([data-theme="dark"]) {
+  --muted: #5c5c61;
+  --contrast-sync-ink: #2e6b45;
+  --contrast-priority-medium-ink: #7a5a10;
+  --contrast-chip-active-ink: #1d4ed8;
+  --contrast-payment-ink: #a04c16;
+}
+:root[data-theme="dark"] {
+  --muted: #c4c4c9;
+  --contrast-sync-ink: #8fd3a6;
+  --contrast-priority-medium-ink: #e0b455;
+  --contrast-tag-ink: #d6d6db;
+}
+
+:root:not([data-theme="dark"]) .sync-status { color: var(--contrast-sync-ink); }
+:root[data-theme="dark"] .sync-status { color: var(--contrast-sync-ink); }
+
+:root:not([data-theme="dark"]) #app .priority.medium { color: var(--contrast-priority-medium-ink); }
+:root[data-theme="dark"] #app .priority.medium { color: var(--contrast-priority-medium-ink); }
+
+/* Event colour comes from --event-color; mix toward the theme text colour for legibility. */
+.calendar-event-icon { color: color-mix(in srgb, var(--event-color) 65%, var(--text) 35%); }
+:root[data-theme="dark"] .calendar-event-icon { color: color-mix(in srgb, var(--event-color) 45%, var(--text) 55%); }
+:root[data-theme="dark"] .calendar-event-copy > b { color: color-mix(in srgb, var(--event-color) 45%, var(--text) 55%); }
+
+:root[data-theme="dark"] .tag,
+:root[data-theme="dark"] .category-pill { color: var(--contrast-tag-ink); }
+
+/* Light theme: active filter chip (blue) and payment amount (orange) measured 4.37 and 4.43. Darken only. */
+:root:not([data-theme="dark"]) #app:has(>.tasks-operational) .task-planner-filters .filter-chip.active,
+:root:not([data-theme="dark"]) #app:has(>.tasks-operational) .task-planner-filters .filter-chip.active small { color: var(--contrast-chip-active-ink); }
+:root:not([data-theme="dark"]) :is(.cal-event-row, .calendar-agenda-event, .calendar-reference-row).credit-payment { --event-color: var(--contrast-payment-ink); }

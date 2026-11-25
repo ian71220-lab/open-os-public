@@ -1,0 +1,208 @@
+/* v0.9.9 — final shared ownership layer. Consolidation only; modules retain layout. */
+:root{
+  --button-height:36px;
+  --button-compact-height:32px;
+  --button-font-size:var(--text-small);
+  --button-compact-font-size:var(--text-label);
+  --button-padding:12px;
+  --button-gap:6px;
+  --button-radius:999px;
+  --button-compact-radius:999px;
+  --focus-ring:0 0 0 3px color-mix(in srgb,var(--focus-color) 24%,transparent);
+  --component-divider:1px solid var(--line);
+  --component-row-min:52px;
+  --dialog-inline:min(790px,calc(100vw - var(--space-8)));
+}
+
+/* One semantic rendered-content contract for every module. */
+.rendered-content{
+  width:100%;
+  max-width:none;
+  min-width:0;
+  font-size:var(--content-font-size);
+  line-height:var(--content-leading);
+  overflow-wrap:anywhere;
+  word-break:normal;
+}
+.rendered-content p{
+  margin-block:0 var(--content-paragraph-space);
+  font-size:inherit;
+  line-height:inherit;
+}
+.rendered-content :is(ul,ol){
+  margin-block:var(--content-list-space);
+  padding-inline-start:1.5em;
+}
+.rendered-content li{
+  margin-block:0 var(--content-list-item-space);
+  font-size:inherit;
+  line-height:inherit;
+}
+.rendered-content li>p{margin:0;line-height:inherit}
+.rendered-content :is(h1,h2,h3,h4,h5,h6){
+  margin-block:var(--content-heading-space-before) var(--content-heading-space-after);
+  line-height:var(--leading-heading);
+}
+.rendered-content>:is(h1,h2,h3,h4,h5,h6):first-child{margin-top:0}
+.rendered-content>:last-child{margin-bottom:0}
+.rendered-content blockquote{
+  margin-block:var(--content-list-space) var(--content-paragraph-space);
+  padding-inline-start:var(--space-3);
+  border-inline-start:2px solid var(--line-strong);
+}
+.rendered-content pre{
+  max-width:100%;
+  margin-block:var(--content-list-space) var(--content-paragraph-space);
+  overflow:auto;
+  white-space:pre;
+}
+.rendered-content code{font-family:var(--font-mono)}
+.rendered-content a{
+  color:var(--link-color);
+  text-decoration-color:color-mix(in srgb,currentColor 46%,transparent);
+  text-underline-offset:.16em;
+}
+.rendered-content :is(strong,b){font-weight:600}
+.rendered-content :is(em,i){font-style:italic}
+.rendered-content hr{margin-block:var(--space-4);border:0;border-top:var(--component-divider)}
+.rendered-content .rich-table-scroll{
+  max-width:100%;
+  margin-block:var(--content-list-space) var(--content-paragraph-space);
+  overflow:auto;
+  overscroll-behavior-inline:contain;
+}
+.rendered-content table{max-width:100%;border-collapse:collapse}
+.rendered-content :is(th,td){vertical-align:top;overflow-wrap:anywhere}
+
+/* Shared controls: alignment, states and motion are owned here. */
+/* Semantic action buttons only. Navigation, calendar and editor controls retain their owners. */
+:root body :is(.primary-btn,.secondary-btn,.danger-btn,.link-btn):not(:where(.rich-toolbar *,.rich-selection-toolbar *,.calendar-nav *,#menuBtn,#themeBtn,#sidebarClose)){
+  display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;
+  height:var(--button-height);min-height:var(--button-height);min-width:0;
+  padding:0 var(--button-padding);gap:var(--button-gap);
+  font-size:var(--button-font-size);font-weight:600;line-height:1.2;
+  border-radius:var(--button-radius);white-space:nowrap;vertical-align:middle;
+}
+:root body :is(.primary-btn,.secondary-btn,.danger-btn,.link-btn).compact{
+  height:var(--button-compact-height);min-height:var(--button-compact-height);
+  padding-inline:10px;font-size:var(--button-compact-font-size);border-radius:var(--button-compact-radius);
+}
+:root body .icon-btn:not(:where(#menuBtn,#themeBtn,#sidebarClose,.calendar-nav *,.rich-toolbar *,.rich-selection-toolbar *)){
+  display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;
+  width:36px;min-width:36px;height:36px;min-height:36px;padding:0;border-radius:10px;line-height:1;
+}
+:is(.section-actions,.detail-actions,.modal-actions,.travel-trip-actions,.credit-card-actions,.vendor-row-actions){
+  display:flex;flex-wrap:wrap;align-items:center;gap:8px;min-width:0;
+}
+@media(max-width:780px){
+  :is(.section-actions,.detail-actions,.modal-actions,.travel-trip-actions,.credit-card-actions,.vendor-row-actions){gap:12px 10px}
+  :root body :is(.section-actions,.detail-actions,.travel-trip-actions)>.primary-btn{width:auto}
+}
+@media(pointer:coarse){
+  /* Expand real control boxes on touch devices rather than overlapping invisible hit areas. */
+  :root body :is(.primary-btn,.secondary-btn,.danger-btn,.link-btn).compact,
+  :root body :is(.primary-btn,.secondary-btn,.danger-btn,.link-btn,.icon-btn):not(:where(.rich-toolbar *,.rich-selection-toolbar *,.calendar-nav *,#menuBtn,#themeBtn,#sidebarClose)){
+    min-height:44px;min-width:44px;
+  }
+  :root body :is(.filter-chip,.star-btn,.tag-filter,.nav-item,.tree-item,.tree-add){
+    min-width:44px;min-height:44px;
+  }
+  :root body .star-btn{display:inline-grid;place-items:center;padding:0}
+}
+
+:is(.primary-btn,.secondary-btn,.danger-btn,.link-btn,.icon-btn,.mini-btn,.mini-add-btn,.text-btn){
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+  text-decoration:none;
+}
+:is(.primary-btn,.secondary-btn,.danger-btn,.link-btn,.mini-btn,.mini-add-btn,.text-btn){display:inline-flex}
+:is(.primary-btn,.secondary-btn,.danger-btn,.link-btn,.mini-btn,.mini-add-btn){white-space:nowrap}
+:is(.primary-btn,.secondary-btn,.danger-btn,.link-btn,.icon-btn,.mini-btn,.mini-add-btn,.text-btn):disabled,
+:is(.primary-btn,.secondary-btn,.danger-btn,.link-btn,.icon-btn,.mini-btn,.mini-add-btn,.text-btn)[aria-disabled="true"]{
+  opacity:.56;
+  cursor:not-allowed;
+}
+:is(button,a,input,textarea,select,[role="button"]):focus-visible{
+  outline:2px solid var(--focus-color);
+  outline-offset:2px;
+  box-shadow:var(--focus-ring);
+}
+
+/* Shared dialog foundation. Existing special-purpose dialogs retain dimensions. */
+.modal-backdrop{
+  overscroll-behavior:contain;
+  overflow:auto;
+}
+.modal-backdrop> :is(.modal,.prompt-modal,.video-modal,.image-viewer){
+  scrollbar-gutter:stable;
+  overscroll-behavior:contain;
+}
+.modal{
+  width:var(--dialog-inline);
+  max-width:100%;
+}
+.modal-header{min-width:0}
+.modal-header>div{min-width:0}
+.modal-header :is(h1,h2,h3){overflow-wrap:anywhere}
+.modal-actions{align-items:center;flex-wrap:wrap}
+
+/* Shared list/table resilience. Density remains module-owned. */
+:is(.agenda-item,.task-item,.comm-item,.vendor-row,.asset-card,.bookmark-row){
+  min-width:0;
+}
+:is(.agenda-item,.task-item,.comm-item,.vendor-row,.asset-card,.bookmark-row)>*{min-width:0}
+:is(.agenda-item,.task-item,.comm-item,.vendor-row,.bookmark-row) :is(a,strong,.item-meta){overflow-wrap:anywhere}
+.table-scroll,.rich-table-scroll{
+  max-width:100%;
+  overscroll-behavior-inline:contain;
+}
+.comm-table{max-width:100%}
+.comm-table :is(th,td){min-width:0}
+
+/* Shared attachment and lightbox behaviors. */
+:is(.capture-image-preview,.attachment-gallery-item){
+  transition:border-color var(--duration-ui) ease,background-color var(--duration-ui) ease;
+}
+.attachment-lightbox>.image-viewer{isolation:isolate}
+.attachment-viewer img{
+  max-inline-size:min(90vw,1400px);
+  max-block-size:82dvh;
+  object-fit:contain;
+}
+.attachment-viewer figcaption{font-size:var(--text-meta);line-height:var(--leading-heading)}
+
+@media(max-width:780px){
+  :root{--dialog-inline:calc(100vw - max(var(--space-4),var(--safe-left)) - max(var(--space-4),var(--safe-right)))}
+  .modal-actions{width:100%}
+  .modal-actions>button{flex:1 1 auto}
+  .rendered-content{min-width:0;max-width:100%}
+  .rendered-content :is(pre,.rich-table-scroll){max-width:100%;overflow:auto}
+}
+
+@media(prefers-reduced-motion:reduce){
+  :is(.capture-image-preview,.attachment-gallery-item){transition:none}
+}
+
+/* Existing alert text remains unchanged; this makes its current error state easier to locate. */
+:root body :is(.auth-message,[data-error][role="alert"]):not(:empty){
+  display:block;box-sizing:border-box;margin-block-start:var(--space-3);padding:var(--space-3);
+  border:1px solid color-mix(in srgb,var(--danger) 36%,var(--line));
+  border-inline-start:3px solid var(--danger);border-radius:var(--radius-md);
+  background:color-mix(in srgb,var(--danger) 8%,var(--panel));color:var(--danger);
+  font-size:var(--text-label,13px);line-height:1.45;
+}
+
+/* Shared visual contract. Geometry and interaction remain in their existing module owners. */
+body{font-family:var(--font-ui);font-size:var(--text-body);line-height:1.5}
+.page-title{font-size:var(--text-page-title);font-weight:600;line-height:1.2;letter-spacing:-.025em}
+:where(.modal,.prompt-modal,.video-modal,.auth-card){box-shadow:var(--shadow-overlay)}
+:where(.field-grid,.modal,.auth-card) :is(input:not([type=checkbox]):not([type=radio]):not([type=color]):not([type=file]),select,textarea){border-radius:var(--radius-md)}
+:where(.primary-btn){background:var(--accent);color:var(--accent-text);border-color:var(--accent)}
+:where(.secondary-btn){background:var(--panel);color:var(--text);border-color:var(--line-strong)}
+.global-search-wrap input{border-radius:var(--radius-pill)}
+:where(.modal-header,.section-head) :is(h2,h3){font-weight:600}
+:where(.filter-chip,.tab-btn,.tag-filter):focus-visible{outline:2px solid var(--focus-color);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){
+  :where(.nav-item,.item-card,.project-card,.video-card-wall,.primary-btn,.secondary-btn){transition:none}
+}

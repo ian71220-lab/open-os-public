@@ -1,0 +1,58 @@
+/* Topbar presentation only. Existing actions are relocated, never duplicated. */
+.topbar-secondary{display:contents}
+.topbar-actions #syncStatus{order:1}
+.topbar-actions .build-label{order:2}
+
+.topbar-actions #themeBtn{order:4}
+.topbar-actions #addBtn{order:5}
+.topbar-actions #accountBtn{order:6}
+.mobile-topbar-controls:empty{display:none}
+@media(min-width:781px) and (max-width:1100px){
+  .topbar .build-label{display:none}
+  .topbar{padding-inline:var(--space-4);gap:var(--space-3)}
+}
+@media(max-width:780px){
+  .topbar{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto auto auto;
+    grid-template-rows:var(--control-h);
+    gap:0 var(--space-2);
+    height:auto;
+    padding:var(--safe-top) max(var(--space-4),var(--safe-right)) var(--space-3) max(var(--space-4),var(--safe-left));
+    align-items:center;
+  }
+  .topbar-left,.topbar-actions{display:contents}
+  .topbar .mobile-brand{
+    display:inline-grid;grid-column:1;grid-row:1;
+    width:var(--control-h);height:var(--control-h);justify-self:start;
+  }
+  .topbar #addBtn{
+    grid-column:2;grid-row:1;order:0;
+    position:relative;height:36px;min-height:36px;min-width:36px;
+    padding-inline:12px;gap:6px;font-size:var(--text-small);font-weight:600;border-radius:10px;
+  }
+
+  .topbar #menuBtn{
+    grid-column:3;grid-row:1;order:0;
+    width:var(--control-h);height:var(--control-h);
+    background:transparent;border-color:transparent;
+  }
+  .topbar .global-search-wrap{display:none}
+  .mobile-topbar-controls{padding-block:var(--space-3);border-bottom:1px solid var(--line);margin-bottom:var(--space-2)}
+  .mobile-topbar-controls .topbar-secondary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-2);align-items:center}
+  .mobile-topbar-controls .build-label{display:none}
+  .mobile-topbar-controls .sync-status{display:block;grid-column:1 / -1;justify-self:start;margin-bottom:var(--space-1)}
+  .mobile-topbar-controls .sync-status[data-state="saved"]{color:var(--success);border-color:var(--success)}
+  .mobile-topbar-controls .sync-status:is([data-state="pending"],[data-state="syncing"]){color:var(--warning)}
+  .mobile-topbar-controls :is(.icon-btn){
+    display:inline-flex;align-items:center;justify-content:center;
+    min-width:var(--control-h);width:100%;height:var(--control-h);
+    color:var(--text);background:var(--panel-2);border:1px solid var(--line);
+    border-radius:var(--radius-md);margin:0;
+  }
+  .mobile-topbar-controls [hidden]{display:none}
+  .mobile-topbar-controls #accountBtn,.account-menu{display:none}
+}
+@media(max-width:375px){.topbar #addBtn>span{display:none}}
+
+@media(max-width:780px) and (pointer:coarse){.topbar #addBtn{min-height:44px;min-width:44px}}

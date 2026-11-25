@@ -1,0 +1,67 @@
+/* Phase 2A — Operational B. Home-only; shared tokens and component behavior stay intact. */
+#app:has(> .home-operational) .page-head{margin-bottom:var(--space-6);gap:var(--space-5)}
+#app:has(> .home-operational) .page-title{font-size:var(--text-page-title);line-height:var(--leading-tight);margin-block:var(--space-2) var(--space-3)}
+#app:has(> .home-operational) .page-head>div>.eyebrow{color:var(--brand)}
+#app:has(> .home-operational) .weather-line{font-size:var(--text-small);line-height:var(--leading-body);gap:var(--space-2);margin-top:var(--space-3)}
+#app:has(> .home-operational) .panel{padding:var(--space-5);border-radius:var(--radius-xl);box-shadow:none;background:var(--panel)}
+#app:has(> .home-operational) .home-tags{margin-block:var(--space-5) var(--space-6);background:var(--panel-2)}
+#app:has(> .home-operational) .overview-heading,
+#app:has(> .home-operational) .section-head{gap:var(--space-4);margin-bottom:var(--space-4)}
+#app:has(> .home-operational) .overview-heading h2,
+#app:has(> .home-operational) .section-head h2{font-size:var(--text-section-title);line-height:var(--leading-heading)}
+#app:has(> .home-operational) .home-tags h2{font-size:var(--text-card-title)}
+#app:has(> .home-operational) .overview-heading>span{font-size:var(--text-small);color:var(--muted);line-height:var(--leading-body)}
+#app:has(> .home-operational) .tag-filter-list{gap:var(--space-2)}
+#app:has(> .home-operational) .tag-filter{padding:var(--space-2) var(--space-3);gap:var(--space-2);border-radius:var(--radius-pill);background:var(--panel);color:var(--text);font-size:var(--text-small);border-color:var(--line)}
+#app:has(> .home-operational) .tag-filter b{font-size:var(--text-meta);color:var(--muted)}
+#app:has(> .home-operational) .system-overview{margin-bottom:var(--space-6);padding-top:0}
+#app:has(> .home-operational) .overview-grid{gap:var(--space-3)}
+#app:has(> .home-operational) .overview-card{padding:var(--space-4);gap:var(--space-3);border-radius:var(--radius-lg);box-shadow:none}
+#app:has(> .home-operational) .overview-icon{border-radius:var(--radius-md);background:var(--panel-2);color:var(--muted)}
+#app:has(> .home-operational) .overview-copy b{font-size:var(--text-body);line-height:var(--leading-heading)}
+#app:has(> .home-operational) .overview-copy small{font-size:var(--text-meta);margin-top:var(--space-1);color:var(--muted)}
+#app:has(> .home-operational) .overview-card>strong{font-size:var(--text-section-title);line-height:var(--leading-heading)}
+#app:has(> .home-operational) .overview-card.needs-attention{border-color:var(--brand)}
+#app:has(> .home-operational) .latest-project-strip{margin-top:var(--space-3);padding:var(--space-3) var(--space-4);gap:var(--space-3);border-radius:var(--radius-lg);background:var(--panel-2)}
+#app:has(> .home-operational) .latest-project-strip small{font-size:var(--text-small);line-height:var(--leading-body);margin-top:var(--space-1)}
+#app:has(> .home-operational) .dashboard-grid,
+#app:has(> .home-operational) .dashboard-col{gap:var(--space-5)}
+#app:has(> .home-operational) .brief-panel{box-shadow:var(--shadow-panel);border-color:var(--line-strong)}
+#app:has(> .home-operational) .brief-panel:after{content:none}
+#app:has(> .home-operational) .brief-panel>.eyebrow{color:var(--brand)}
+#app:has(> .home-operational) .brief-date{font-size:var(--text-small);margin-top:var(--space-2);color:var(--muted)}
+#app:has(> .home-operational) .brief-title{font-size:var(--text-section-title);line-height:var(--leading-heading);margin-block:var(--space-4) var(--space-3)}
+#app:has(> .home-operational) .brief-summary{font-size:var(--text-body);line-height:var(--leading-body);color:var(--text)}
+#app:has(> .home-operational) .brief-counts{gap:var(--space-3);margin-top:var(--space-5)}
+#app:has(> .home-operational) .brief-counts>div{padding:var(--space-3);border-radius:var(--radius-md);border-top-width:thin;border-color:var(--line);background:var(--panel-2)}
+#app:has(> .home-operational) .brief-counts strong{font-size:var(--text-section-title);line-height:var(--leading-heading)}
+#app:has(> .home-operational) .brief-counts span{font-size:var(--text-label);line-height:var(--leading-body);margin-top:var(--space-1)}
+#app:has(> .home-operational) .brief-counts .ui-icon{color:var(--muted)}
+#app:has(> .home-operational) .brief-list{gap:var(--space-4);margin-top:var(--space-5)}
+#app:has(> .home-operational) .brief-list-group h3{font-size:var(--text-label);line-height:var(--leading-heading);padding-bottom:var(--space-2)}
+#app:has(> .home-operational) .brief-list-group li{font-size:var(--text-small);line-height:var(--leading-body);padding-block:var(--space-2)}
+#app:has(> .home-operational) .brief-open-tasks{margin-top:var(--space-5);padding-top:var(--space-5)}
+#app:has(> .home-operational) .home-month-card{margin-top:var(--space-6)}
+/* Preserve P3 feedback despite the stronger Home scope. */
+@media (hover:hover) and (pointer:fine){
+  #app:has(> .home-operational) .overview-card:hover,
+  #app:has(> .home-operational) .latest-project-strip:hover{border-color:var(--line-strong);box-shadow:var(--shadow-panel)}
+  #app:has(> .home-operational) .overview-card:hover .overview-icon{background:var(--accent);color:var(--accent-text)}
+}
+@media(max-width:780px){
+  #app:has(> .home-operational) .panel{padding:var(--space-4)}
+  #app:has(> .home-operational) .overview-card{padding:var(--space-3);gap:var(--space-2)}
+  #app:has(> .home-operational) .overview-copy b{font-size:var(--text-small)}
+  #app:has(> .home-operational) .overview-grid{gap:var(--space-2)}
+  #app:has(> .home-operational) .brief-counts,
+  #app:has(> .home-operational) .brief-list{gap:var(--space-2)}
+}
+
+/* v0.9.9.6 — Travel Planning itinerary rows inside Home Today's Schedule. */
+#app:has(>.home-operational) .home-travel-agenda{display:block;white-space:normal;overflow:visible;padding-block:var(--space-2)}
+#app:has(>.home-operational) .home-travel-agenda-title{display:flex;align-items:center;gap:var(--space-1);min-height:32px;padding:0;border:0;background:transparent;color:var(--text);font:inherit;font-weight:600;text-align:left;cursor:pointer}
+#app:has(>.home-operational) .home-travel-agenda-title:hover{color:var(--brand)}
+#app:has(>.home-operational) .home-travel-agenda>ul{margin:0;padding:0;list-style:none}
+#app:has(>.home-operational) .home-travel-agenda>ul>li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:var(--space-2);padding-block:5px;border:0;white-space:normal;overflow:visible;text-overflow:clip;font-size:var(--text-small);line-height:var(--leading-body)}
+#app:has(>.home-operational) .home-travel-agenda time{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+#app:has(>.home-operational) .home-travel-agenda>ul>li>span{min-width:0;overflow-wrap:anywhere}

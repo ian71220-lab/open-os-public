@@ -1,0 +1,86 @@
+/* OPEN OS v1.0.4.4: coarse pointer targets; existing fine pointer geometry is untouched.
+   v1.0.5.0: bare links are no longer forced to 44px (inline text links keep their line layout).
+   The !important on controls stays: component rules set smaller heights that it must override. */
+@media (pointer: coarse) {
+  button,
+  [role="button"],
+  .icon-btn,
+  .nav-item,
+  .primary-btn,
+  .secondary-btn {
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+  /* Inline text links: enlarge the hit area with a pseudo-element, which leaves layout unchanged. */
+  .restaurant-facts a { position: relative; }
+  .restaurant-facts a::after { content: ""; position: absolute; inset: -14px -6px; }
+}
+
+@media (max-width: 600px) {
+  .auth-gate { grid-template-columns: minmax(0, 1fr); padding-inline: 16px; }
+  .auth-card {
+    width: 100%;
+    max-width: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+/* Existing compact labels and metadata in the signed-in workspace only. */
+@media (max-width: 600px) {
+  :is(#app, .sidebar, .topbar, .modal, .notification-dropdown, .account-menu) :is(
+    .brand small, .nav-label, kbd, .migration-btn, .account-menu span,
+    .sync-status, .filter-chip small,
+    .eyebrow, .item-meta, .priority, .comm-direction, .quick-card span,
+    .calendar-weekdays div, .cal-num, .cal-event, .type-pill,
+    .tag, .category-pill, .card-footer, .prompt-image-count,
+    .related-card span, .comm-table th, .video-source,
+    label, .category-field, .field-caption, .field-hint, .field-label,
+    .info-note, .style-thumb-meta, .style-thumb-meta strong,
+    .prompt-gallery figcaption, .meta-row span, .timestamp-btn strong,
+    .timestamp-btn span, .automation-trigger, .automation-action,
+    .graph-center span, .graph-node span, .graph-score, .search-count,
+    .overview-copy small, .project-status, .version-badge,
+    .project-stats span, .project-summary dt, .timeline-date span,
+    .entry-block h4, .tree-item small, .tree-add,
+    .tree-year-button span, .tree-month, .relation-node span,
+    .relation-link small, .weather-line .text-btn,
+    .clock-tile span, .clock-tile small, .project-overview-grid span,
+    .brief-list span, .brief-list small, .health-head small,
+    .health-row small, .health-row time, .tag-filter b,
+    .brief-list-head span, .brief-list > ul li, .brief-counts span,
+    .brief-list-group h3 b, .brief-list-group li, .preview-details dt,
+    .card-finance-grid small,
+    #captureForm .capture-classification > label > span,
+    #captureForm .category-field > .field-caption,
+    .travel-details dt, .transfer-gap small, .home-month-card .cal-count,
+    .category-picker h3 small, .category-preview-label,
+    .category-icon-grid small, .category-colors small,
+    .rich-toolbar button, .month-page-grid .cal-count,
+    .month-page-grid .cal-num, .bookmark-table th,
+    .travel-list-head > small, .travel-list-head-actions > small,
+    .travel-list-actions .secondary-btn,
+    .automation-phase1 .automation-kicker,
+    .automation-phase1 .automation-notice small,
+    .automation-phase1 .automation-state,
+    .automation-phase1 .automation-summary-time > span:last-child,
+    .automation-phase1 .automation-summary-card .section-actions button,
+    .automation-phase1 .phase2-category-count,
+    .automation-phase1 .phase2-reminder-highlight span,
+    .automation-phase1 .phase2-reminder-card .section-actions button,
+    .automation-phase1 .phase2-reminder-card .field-hint,
+    .automation-editor .automation-kicker,
+    .automation-editor .automation-template-help code,
+    .ian-inbox-mail-top time, .ian-inbox-footnote,
+    .ian-gmail-updated, .automation-phase1 .notice-delete,
+    .notification-badge, .notification-dropdown-item .notification-kind,
+    .notification-dropdown-item small,
+    .notification-dropdown-actions button, .home-alert-ticker-label,
+    .home-alert-ticker-actions [data-ticker-count],
+    .home-alert-ticker-actions .home-alert-ticker-open,
+    .cal-event-row time, .calendar-reference-row small,
+    .calendar-agenda-date b, .calendar-agenda-event .calendar-event-copy small,
+    .calendar-agenda-event time
+  ) { font-size: var(--text-label); }
+}

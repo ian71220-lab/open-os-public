@@ -1,0 +1,12 @@
+/* OPEN OS travel checklist and trip shopping list (v1.0.4.36): two columns, 40px single-line rows, drop above or below a row by pointer half, mouse drag and touch long-press reorder across both columns, single column on phones. */
+.travel-checklist-items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(var(--rows,1),auto);grid-auto-flow:column;gap:0 20px;align-items:start}
+.travel-checklist-items .travel-list-row{display:grid;grid-template-columns:14px minmax(0,1fr) auto;align-items:center;gap:6px;min-height:40px;padding:2px 0;cursor:grab;touch-action:pan-y;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+.travel-checklist-items .travel-list-check{display:grid;grid-template-columns:16px minmax(0,1fr);align-items:center;gap:8px;min-height:32px;padding:0}
+.travel-checklist-items .travel-list-check input{width:16px;height:16px;margin:0}
+.travel-checklist-items .travel-list-actions{display:flex;gap:4px;justify-self:end}
+.travel-checklist-items .travel-list-actions .secondary-btn{min-height:28px;padding:3px 8px;font-size:var(--text-meta);line-height:1.2}
+.travel-checklist-items .travel-list-row.is-dragging{opacity:.94;background:var(--panel);border-radius:10px;box-shadow:0 10px 22px rgba(20,20,40,.2);will-change:transform}
+.travel-checklist-items .travel-drag-slot{border:1.5px dashed var(--line-strong);border-radius:10px;background:transparent}
+.travel-checklist-items.is-reordering{cursor:grabbing}
+.travel-drag-handle{display:block;width:14px;color:var(--muted);font-size:var(--text-body);line-height:1;text-align:center;user-select:none;cursor:grab}
+@media (max-width:780px){.travel-checklist-items{grid-template-columns:minmax(0,1fr);grid-template-rows:none;grid-auto-flow:row}}

@@ -1,0 +1,118 @@
+/* Phase 2D: scoped Operational B treatment using the shared system. */
+#app:has(>.automations-operational) .page-head,
+#app:has(>.travel-operational) .page-head{margin-bottom:var(--space-6)}
+#app:has(>.automations-operational) .eyebrow,
+#app:has(>.travel-operational) .eyebrow,
+#app:has(>.travel-back) .travel-trip-hero .eyebrow{color:var(--brand)}
+#app:has(>.automations-operational) .page-title,
+#app:has(>.travel-operational) .page-title{font-size:var(--text-page-title);line-height:var(--leading-tight)}
+
+/* Automation cards: name and state, then an explicit trigger-to-action flow. */
+#app:has(>.automations-operational) .automation-grid{align-items:stretch;gap:var(--space-4)}
+#app:has(>.automations-operational) .operational-rule{display:flex;flex-direction:column;min-width:0;padding:var(--space-5);border-top:var(--space-1) solid var(--brand);box-shadow:var(--shadow-panel)}
+#app:has(>.automations-operational) .operational-rule[data-rule-state="paused"]{border-top-color:var(--line-strong);box-shadow:none;background:var(--panel-2)}
+#app:has(>.automations-operational) .operational-rule .section-head{align-items:flex-start;gap:var(--space-3);margin-bottom:var(--space-5)}
+#app:has(>.automations-operational) .operational-rule h2{font-size:var(--text-card-title);line-height:var(--leading-heading);overflow-wrap:anywhere}
+#app:has(>.automations-operational) .check-label{flex-shrink:0;font-size:var(--text-label)}
+#app:has(>.automations-operational) .rule-flow{display:grid;gap:var(--space-3);padding:var(--space-4);border-radius:var(--radius-md);background:var(--panel-2)}
+#app:has(>.automations-operational) .operational-rule[data-rule-state="paused"] .rule-flow{background:var(--panel)}
+#app:has(>.automations-operational) .rule-trigger{padding-bottom:var(--space-3);border-bottom:thin solid var(--line)}
+#app:has(>.automations-operational) .rule-trigger span{font-size:var(--text-small);font-weight:bold;color:var(--brand)}
+#app:has(>.automations-operational) .rule-action>span{font-size:var(--text-label);font-weight:bold;color:var(--muted)}
+#app:has(>.automations-operational) .rule-action p{margin:var(--space-1) 0 0;font-size:var(--text-body);line-height:var(--leading-body);color:var(--text)}
+#app:has(>.automations-operational) .rule-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--space-2);margin-block:var(--space-4);font-size:var(--text-small)}
+#app:has(>.automations-operational) .rule-state{font-weight:bold;color:var(--brand)}
+#app:has(>.automations-operational) [data-rule-state="paused"] .rule-state,
+#app:has(>.automations-operational) .rule-last{color:var(--muted)}
+#app:has(>.automations-operational) [data-rule-state="paused"] .rule-trigger span{color:var(--muted)}
+#app:has(>.automations-operational) .operational-rule>.secondary-btn{align-self:flex-start;margin-top:auto}
+#app:has(>.automations-operational) .routine-result:empty{min-height:0;margin:0}
+#app:has(>.automations-operational)>.section{box-shadow:none}
+#app:has(>.automations-operational)>.section h2{font-size:var(--text-section-title)}
+
+/* Travel: a trip focal area, compact day selector, and one calm itinerary surface. */
+#app:has(>.travel-operational) .travel-card{min-height:0;gap:var(--space-3);border-top:var(--space-1) solid var(--brand);box-shadow:var(--shadow-panel)}
+#app:has(>.travel-operational) .travel-card h2{margin:var(--space-2) 0 0;font-size:var(--text-section-title)}
+#app:has(>.travel-operational) .travel-card p{font-size:var(--text-body);line-height:var(--leading-body)}
+#app:has(>.travel-operational) .travel-card .project-open{padding-top:var(--space-4);border-top:thin solid var(--line)}
+#app:has(>.travel-back) .travel-trip-hero{margin-block:var(--space-4) var(--space-4);padding:var(--space-6);border-top:var(--space-1) solid var(--brand);box-shadow:var(--shadow-panel)}
+#app:has(>.travel-back) .travel-trip-hero h1{font-size:var(--text-page-title);line-height:var(--leading-tight)}
+#app:has(>.travel-back) .travel-trip-hero p{max-width:none;font-size:var(--text-body);line-height:var(--leading-copy)}
+#app:has(>.travel-back) .travel-metrics{gap:var(--space-3)}
+#app:has(>.travel-back) .travel-metrics .panel{padding:var(--space-4);background:var(--panel-2);box-shadow:none;font-size:var(--text-small)}
+#app:has(>.travel-back) .travel-metrics strong{font-size:var(--text-card-title);margin-top:var(--space-2);font-variant-numeric:tabular-nums}
+#app:has(>.travel-back) .travel-day-tabs{padding-block:var(--space-4);margin-block:var(--space-3);border-block:thin solid var(--line)}
+#app:has(>.travel-back) .travel-day-panel{padding:var(--space-5);border-radius:var(--radius-xl);box-shadow:var(--shadow-panel)}
+#app:has(>.travel-back) .travel-day-panel>.section-head{padding-bottom:var(--space-4);border-bottom:thin solid var(--line)}
+#app:has(>.travel-back) .travel-day-panel>.section-head h2{font-size:var(--text-section-title)}
+#app:has(>.travel-back) .period-preview{padding:var(--space-4);background:var(--panel-2);border:0;border-radius:var(--radius-md)}
+#app:has(>.travel-back) .period-preview h3{font-size:var(--text-card-title);color:var(--text)}
+#app:has(>.travel-back) .trip-task{padding-block:var(--space-3);font-size:var(--text-body)}
+#app:has(>.travel-back) .trip-task time{font-size:var(--text-small)}
+#app:has(>.travel-back) .travel-details{gap:0;margin-top:var(--space-5);border-top:thin solid var(--line)}
+#app:has(>.travel-back) .travel-details>div{padding:var(--space-3);border-bottom:thin solid var(--line)}
+#app:has(>.travel-back) .travel-details dt{font-size:var(--text-label)}
+#app:has(>.travel-back) .travel-details dd{font-size:var(--text-body);line-height:var(--leading-body)}
+#app:has(>.travel-back) .flight-panel{padding:var(--space-5);box-shadow:none;border-color:var(--line-strong)}
+#app:has(>.travel-back) .flight-card{padding:var(--space-4);margin-top:var(--space-4);background:var(--panel-2);border-radius:var(--radius-md)}
+#app:has(>.travel-back) .flight-card h3{font-size:var(--text-section-title);color:var(--text)}
+#app:has(>.travel-back) .flight-times{gap:var(--space-4)}
+#app:has(>.travel-back) .flight-detail{padding-top:var(--space-3);margin-top:var(--space-3)}
+@media(max-width:780px){
+  #app:has(>.automations-operational) .operational-rule,
+  #app:has(>.travel-back) .travel-trip-hero,
+  #app:has(>.travel-back) .travel-day-panel,
+  #app:has(>.travel-back) .flight-panel{padding:var(--space-4)}
+  #app:has(>.travel-back) .travel-metrics .panel{padding:var(--space-3)}
+  #app:has(>.travel-back) .travel-details{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  #app:has(>.travel-back) .travel-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}
+  #app:has(>.travel-back) .travel-metrics .panel{min-width:0;overflow-wrap:anywhere}
+  #app:has(>.travel-back) .travel-metrics strong{min-width:0;overflow-wrap:anywhere;font-size:var(--text-small)}
+}
+
+
+/* v0.9.9.6 — Travel transport mode, compact road routing and grouped actions. */
+#app:has(>.travel-back) .travel-trip-hero{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:var(--space-5)}
+#app:has(>.travel-back) .travel-trip-hero>.travel-trip-actions{display:flex;align-items:center;justify-content:flex-end;gap:var(--space-2);grid-row:auto;min-width:max-content}
+#app:has(>.travel-back) .roadtrip-panel{margin-top:var(--space-5)}
+#app:has(>.travel-back) .roadtrip-segments{display:grid;gap:var(--space-3)}
+#app:has(>.travel-back) .roadtrip-segment{min-width:0;padding:var(--space-4);border:1px solid var(--line);border-radius:var(--radius-md);background:var(--panel-2)}
+#app:has(>.travel-back) .roadtrip-segment-head{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--space-3)}
+#app:has(>.travel-back) .roadtrip-segment-head>div:first-child{min-width:0}
+#app:has(>.travel-back) .roadtrip-segment-head strong{display:block;overflow-wrap:anywhere;font-size:var(--text-card-title)}
+#app:has(>.travel-back) .roadtrip-segment-head small,#app:has(>.travel-back) .roadtrip-stop-copy small{display:block;margin-top:var(--space-1);color:var(--muted);font-size:var(--text-small)}
+#app:has(>.travel-back) .roadtrip-segment-head .section-actions,#app:has(>.travel-back) .roadtrip-stop .section-actions{flex:0 0 auto;gap:var(--space-1)}
+#app:has(>.travel-back) .roadtrip-segment-meta{margin-top:var(--space-3);font-size:var(--text-small);font-weight:600}
+#app:has(>.travel-back) .roadtrip-route{display:grid;grid-template-columns:minmax(100px,160px) minmax(0,1fr);gap:var(--space-3);margin-top:var(--space-3);padding-top:var(--space-3);border-top:1px solid var(--line);overflow-wrap:anywhere}
+#app:has(>.travel-back) .roadtrip-route small{color:var(--muted);font-size:var(--text-label)}
+#app:has(>.travel-back) .roadtrip-stops{margin-top:var(--space-5);padding-top:var(--space-4);border-top:1px solid var(--line)}
+#app:has(>.travel-back) .roadtrip-stops h3{margin:0 0 var(--space-3);font-size:var(--text-card-title)}
+#app:has(>.travel-back) .roadtrip-stops ol{display:grid;gap:0;margin:0;padding:0;list-style:none;counter-reset:route-stop}
+#app:has(>.travel-back) .roadtrip-stop{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:var(--space-3);align-items:center;padding:var(--space-3) 0;border-top:1px solid var(--line);min-width:0}
+#app:has(>.travel-back) .roadtrip-stop-index{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--panel-2);font-size:var(--text-label);font-weight:600}
+#app:has(>.travel-back) .roadtrip-stop-copy{min-width:0;overflow-wrap:anywhere}
+#app:has(>.travel-back) .roadtrip-stop-copy>span{display:block;margin-top:var(--space-1);color:var(--muted);font-size:var(--text-small)}
+#app:has(>.travel-back) .roadtrip-empty{margin:0;padding:var(--space-4);border:1px dashed var(--line);border-radius:var(--radius-md)}
+.planning-overlay .roadtrip-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-4);width:100%;min-width:0}
+.planning-overlay .roadtrip-form-field{display:grid;align-content:start;gap:var(--space-2);width:100%;min-width:0;margin:0}
+.planning-overlay .roadtrip-form-field>span{display:block;min-width:0;color:var(--muted);font-size:var(--text-label);font-weight:600;line-height:var(--leading-tight)}
+.planning-overlay .roadtrip-form-field input,
+.planning-overlay .roadtrip-form-field select,
+.planning-overlay .roadtrip-form-field textarea{display:block;width:100%;max-width:100%;min-width:0;box-sizing:border-box}
+.planning-overlay .roadtrip-form-field input[type=time]{min-width:0;max-width:100%;padding-inline:var(--space-3);font-variant-numeric:tabular-nums}
+.planning-overlay .roadtrip-form-field--wide{grid-column:1/-1}
+.planning-overlay .roadtrip-form-field textarea{min-height:100px;resize:vertical}
+.planning-overlay .roadtrip-form-grid+.modal-actions{margin-top:var(--space-2)}
+#app:has(>.travel-back) .roadtrip-panel .section-actions button{white-space:nowrap}
+#app:has(>.travel-back) .roadtrip-panel button:disabled{opacity:.45;cursor:not-allowed}
+@media(max-width:780px){#app:has(>.travel-back) .travel-trip-hero{grid-template-columns:minmax(0,1fr)}#app:has(>.travel-back) .travel-trip-hero>.travel-trip-actions{grid-row:auto;justify-content:flex-start;min-width:0}#app:has(>.travel-back) .roadtrip-panel .section-head{align-items:flex-start}#app:has(>.travel-back) .roadtrip-panel .section-head .section-actions{width:100%}#app:has(>.travel-back) .roadtrip-panel .section-actions button{flex:1}#app:has(>.travel-back) .roadtrip-stop{grid-template-columns:28px minmax(0,1fr)}#app:has(>.travel-back) .roadtrip-stop>.section-actions{grid-column:2;justify-content:flex-start}.planning-overlay .roadtrip-form-grid{grid-template-columns:minmax(0,1fr)}.planning-overlay .roadtrip-form-field--wide{grid-column:auto}}
+#app:has(>.travel-back) .travel-trip-actions #deleteTrip,
+#app:has(>.travel-back) .travel-trip-actions #editTrip{min-height:42px}
+@media(max-width:780px){
+  #app:has(>.travel-back) .roadtrip-segment-head{display:grid;grid-template-columns:minmax(0,1fr)}
+  #app:has(>.travel-back) .roadtrip-segment-head .section-actions{justify-content:flex-start}
+  #app:has(>.travel-back) .roadtrip-segment-head .section-actions button,
+  #app:has(>.travel-back) .roadtrip-stop>.section-actions button{min-height:36px}
+}

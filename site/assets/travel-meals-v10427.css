@@ -1,0 +1,11 @@
+/* Travel details use one neutral surface and full-width meal and list rows. */
+.planning-overlay .travel-day-meals{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:22px}
+.planning-overlay .travel-day-meals label{display:grid;gap:8px;min-width:0}
+.planning-overlay .travel-day-meals input{width:100%;min-width:0;box-sizing:border-box}
+#app:has(>.travel-back) .travel-lists-grid{grid-template-columns:minmax(0,1fr)}
+#app:has(>.travel-back) :is(.panel,.project-hero,.period-preview,.travel-day-highlight-view,.flight-card,.roadtrip-segment){background:var(--panel)}
+#app:has(>.travel-back) :is(.panel,.project-hero,.travel-list-panel){border-radius:15px}
+.planning-overlay .modal{background:var(--panel);border-radius:15px}
+
+/* Other large page surfaces use the same compact corner. */
+#app :is(.restaurant-card,.project-hero,.travel-day-panel,.travel-list-panel,.section,.empty-state){border-radius:15px}

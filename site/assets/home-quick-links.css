@@ -1,0 +1,237 @@
+/* RC2 homepage: the v0.9.6.1 Quick Filters panel, mapped to shared tokens. */
+#app:has(> .home-operational) .home-tags.panel {
+  margin-block: var(--space-5) var(--space-4);
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: var(--panel);
+  box-shadow: none;
+}
+#app:has(> .home-operational) .home-tags .overview-heading {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+#app:has(> .home-operational) .home-tags .eyebrow {
+  display: block;
+  color: var(--muted);
+}
+#app:has(> .home-operational) .home-tags h2 {
+  margin: var(--space-1) 0 0;
+  font-size: var(--text-section-title);
+  line-height: var(--leading-heading);
+}
+#app:has(> .home-operational) .home-tags .overview-heading > span {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--text-label);
+  line-height: var(--leading-body);
+}
+#app:has(> .home-operational) .tag-filter-list {
+  gap: var(--space-2);
+}
+#app:has(> .home-operational) .tag-filter {
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--panel-2);
+  color: var(--text);
+  font-size: var(--text-label);
+}
+#app:has(> .home-operational) .tag-filter b {
+  font-size: var(--text-micro);
+  color: var(--muted);
+}
+
+/* Quick Tags controls stay local so searching never replaces the input. */
+#app .home-tags.panel { min-width:0; min-height:0; height:auto; }
+#app .home-tags .home-tags-controls {
+  display:flex; flex-wrap:wrap; align-items:center; gap:var(--space-2);
+  margin-bottom:var(--space-3); min-width:0;
+}
+#app .home-tags-controls input {
+  flex:1 1 12rem; width:100%; max-width:22rem; min-width:0;
+  box-sizing:border-box;
+}
+#app .home-tags-controls [data-home-tags-status] { font-size:var(--text-label); }
+#app .home-tags-controls button { flex:none; }
+#app .home-tags-controls button[hidden] { display:none; }
+#app .home-tags .tag-filter-list {
+  display:flex; flex-wrap:wrap; align-items:flex-start; align-content:flex-start;
+  width:100%; min-width:0; min-height:0; height:auto;
+}
+#app .home-tags .tag-filter {
+  flex:0 1 auto; max-width:100%; min-width:0; height:auto; white-space:normal;
+}
+#app .home-tags .tag-filter .home-tag-name {
+  min-width:0; overflow-wrap:anywhere; font-weight:inherit; text-align:left;
+}
+#app .home-tags .tag-filter > span:first-child,
+#app .home-tags .tag-filter b { flex:none; }
+@media(max-width:780px) {
+  #app .home-tags-controls input { flex-basis:100%; max-width:100%; }
+}
+
+/* Quick Links sit between the filters and the existing overview. */
+#app:has(> .home-operational) .home-quick-links {
+  margin-bottom: var(--space-5);
+  padding: var(--space-3) var(--space-5) var(--space-4);
+  border-bottom: 1px solid var(--line);
+}
+#app:has(> .home-operational) .home-quick-links-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+#app:has(> .home-operational) .home-quick-links h2 {
+  margin: var(--space-1) 0 0;
+  font-size: var(--text-section-title);
+  line-height: var(--leading-heading);
+}
+#app:has(> .home-operational) .home-quick-links-edit {
+  flex: none;
+  min-width: var(--control-h);
+  min-height: var(--control-h);
+  color: var(--muted);
+}
+#app:has(> .home-operational) .home-quick-links-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  min-width: 0;
+}
+#app:has(> .home-operational) .home-quick-link {
+  display: grid;
+  flex: 0 0 var(--control-h);
+  place-items: center;
+  width: var(--control-h);
+  height: var(--control-h);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: var(--panel);
+  color: var(--text);
+  text-decoration: none;
+  transition: background-color var(--duration-ui) var(--ease-out),
+    border-color var(--duration-ui) var(--ease-out);
+}
+.home-quick-link img,
+.home-link-editor-preview img {
+  display: block;
+  width: var(--space-5);
+  height: var(--space-5);
+  object-fit: contain;
+}
+.home-quick-link-fallback,
+.home-link-editor-preview .home-quick-link-fallback {
+  font-size: var(--text-card-title);
+  font-weight:600;
+  line-height: var(--leading-tight);
+}
+.home-quick-link [hidden],
+.home-link-editor-preview [hidden] { display: none; }
+.home-quick-links-empty { color: var(--muted);font-size: var(--text-small); }
+
+/* The editor uses existing modal and control patterns; the list itself scrolls. */
+.home-links-overlay .modal-header { margin-bottom: var(--space-4); }
+.home-links-overlay .modal h2 { font-size: var(--text-section-title); }
+.home-links-editor-list {
+  display: grid;
+  gap: var(--space-3);
+  max-height: 52dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-inline-end: var(--space-2);
+}
+.home-link-editor-row {
+  display: grid;
+  grid-template-columns: var(--control-h) minmax(0,1fr) auto;
+  align-items: start;
+  gap: var(--space-3);
+  min-width: 0;
+  padding: var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--panel-2);
+}
+.home-link-editor-preview {
+  display: grid;
+  place-items: center;
+  width: var(--control-h);
+  height: var(--control-h);
+  border-radius: var(--radius-sm);
+  background: var(--panel);
+}
+.home-link-editor-fields {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,2fr);
+  gap: var(--space-2);
+  min-width: 0;
+}
+.home-link-editor-fields label { min-width: 0; }
+.home-link-editor-fields .home-link-icon-field { grid-column: 1 / -1; }
+.home-link-editor-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-1);
+  max-width: calc(var(--control-h) + var(--control-h) + var(--space-1));
+}
+.home-link-editor-actions .icon-btn { min-width: var(--control-h); }
+.home-link-editor-actions .home-link-icon-reset { width: 100%; }
+.home-links-editor-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--line);
+}
+.home-links-editor-footer .modal-actions { margin: 0; }
+
+@media (hover: hover) and (pointer: fine) {
+  #app:has(> .home-operational) .home-quick-link:hover {
+    background: var(--panel-2);
+    border-color: var(--line);
+  }
+}
+#app:has(> .home-operational) .home-quick-link:active {
+  background: var(--panel-3);
+}
+#app:has(> .home-operational) .home-quick-link:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  #app:has(> .home-operational) .home-quick-link { transition: none; }
+}
+@media (max-width: 780px) {
+  #app:has(> .home-operational) .home-tags.panel {
+    margin-block: var(--space-4);
+    padding: var(--space-4);
+  }
+  #app:has(> .home-operational) .home-tags .overview-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+  #app:has(> .home-operational) .home-quick-links {
+    padding-inline: var(--space-4);
+  }
+  .home-link-editor-row {
+    grid-template-columns: var(--control-h) minmax(0,1fr);
+  }
+  .home-link-editor-fields { grid-template-columns: minmax(0,1fr); }
+  .home-link-editor-fields .home-link-icon-field { grid-column: auto; }
+  .home-link-editor-actions {
+    grid-column: 2;
+    max-width: none;
+    justify-content: flex-start;
+  }
+  .home-link-editor-actions .home-link-icon-reset { width: auto; }
+}

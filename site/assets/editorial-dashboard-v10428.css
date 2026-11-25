@@ -1,0 +1,92 @@
+/* Editorial Minimalist visual layer. Layout, content and navigation behavior stay intact. */
+:root{
+  --bg:#f7f6f2;--panel:#fff;--panel-2:#f5f4f0;--panel-3:#eae9e3;
+  --text:#252924;--muted:#59615a;--line:#d9ddd6;--line-strong:#aab3aa;
+  --editorial-terra:#a35e49;--editorial-sage:#5b7563;
+  --radius-xl:8px;--radius-lg:8px;--radius-md:7px;--radius-sm:6px;
+  --shadow-panel:none;--shadow-overlay:0 12px 32px rgba(20,28,21,.1);
+  --bento-cream:var(--panel);--bento-peach:var(--panel);--bento-sage:var(--panel);
+  --bento-blue:var(--panel);--bento-gold:var(--panel);--bento-gap:16px;
+  --font-ui:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",Arial,sans-serif;
+}
+:root[data-theme="dark"]{
+  --bg:#171b18;--panel:#222823;--panel-2:#2b322c;--panel-3:#363f37;
+  --text:#f2f3ee;--muted:#b8c5b9;--line:#48534a;--line-strong:#738274;
+  --editorial-terra:#d9a18d;--editorial-sage:#a6c2a9;
+  --bento-cream:var(--panel);--bento-peach:var(--panel);--bento-sage:var(--panel);
+  --bento-blue:var(--panel);--bento-gold:var(--panel);
+}
+
+@media(min-width:781px){
+  :root{--sidebar:232px}
+  .sidebar{width:var(--sidebar);padding:24px 14px 18px}
+  .topbar,.topbar.is-scrolled{height:64px;padding-inline:clamp(32px,3vw,40px)}
+  #app{padding:36px clamp(32px,3vw,40px) 90px}
+  body.nav-rail-collapsed .sidebar{width:64px}
+}
+.sidebar{background:#20231f;border-right-color:#3b413b;color:#eef0e9;backdrop-filter:none}
+.sidebar .brand,.sidebar .nav-item{color:#c8d0c7}
+.sidebar .brand strong,.sidebar .nav-item.active{color:var(--color-gallery-white)}
+.sidebar .nav-label,.sidebar .brand small{color:#adb8ac}
+.sidebar .nav-item.active{background:#374039;box-shadow:inset 3px 0 var(--editorial-sage)}
+.sidebar .nav-item:hover:not(.active),.sidebar :is(.tree-item,.tree-add):hover{background:#303831;color:var(--color-gallery-white)}
+.sidebar .nav-children{border-left-color:#566157}
+.sidebar :is(.tree-item,.tree-add){color:#c8d0c7}
+.sidebar .tree-item.selected{color:var(--color-gallery-white);background:#374039}
+.sidebar .sidebar-meta{border-top-color:#4d574d}
+.sidebar .nav-rail-toggle{color:#eef0e9;background:#303831;border-color:#59645a}
+
+.topbar,.topbar.is-scrolled{background:color-mix(in srgb,var(--bg) 94%,transparent);box-shadow:none;border-bottom:1px solid var(--line)}
+.topbar.is-scrolled{backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.global-search-wrap input{height:40px;border-radius:7px}
+.global-search-wrap .search-icon{top:8px}
+.topbar kbd{top:8px;border-radius:6px}
+#app{max-width:1600px}
+#app>.page-head{margin-bottom:32px;gap:16px}
+#app .page-head>div:first-child{padding:0;border-radius:0;max-width:none;background:none}
+#app .page-title{font-size:clamp(32px,3vw,42px);line-height:1.12;letter-spacing:-.045em;font-weight:750;margin:8px 0 10px}
+#app .page-subtitle{line-height:1.6;color:var(--muted)}
+#app :is(.eyebrow,.nav-label){font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;text-transform:uppercase;letter-spacing:.14em;font-size:var(--text-meta);line-height:1.5}
+#app .section{margin-top:32px}
+#app .section-head{margin-bottom:16px}
+#app .section-head h2{font-size:var(--text-section-title);line-height:1.3;font-weight:700;letter-spacing:-.02em}
+#app :is(.dashboard-grid,.dashboard-col,.card-grid,.project-grid,.overview-grid,.automation-grid,.restaurant-grid,.month-page-grid){gap:16px}
+#app .dashboard-grid{grid-template-columns:minmax(0,1.65fr) minmax(300px,.85fr)}
+#app :is(.panel,.item-card,.project-card,.overview-card,.home-widget,.bookmark-table-wrap,.restaurant-card,.project-hero,.travel-day-panel,.travel-list-panel,.empty-state){
+  border-radius:8px;background:var(--panel);border:1px solid var(--line);box-shadow:none;
+}
+#app .panel:nth-child(n),#app :is(.item-card,.project-card,.overview-card):nth-child(n){background:var(--panel)}
+#app :is(.panel,.item-card,.project-card,.overview-card,.restaurant-card){padding:clamp(20px,2vw,24px)}
+#app :is(.brief-panel,.month-card){padding:24px}
+#app .brief-panel:after{display:none}
+#app :is(.metric-chip,.type-pill,.filter-chip,.tag,.category-pill,.restaurant-cuisine-tag){border-radius:6px;box-shadow:none}
+#app :is(.agenda-item,.task-item,.comm-item,.quick-card,.clock-tile,.period-preview,.flight-card,.roadtrip-segment){border-radius:7px;background:var(--panel-2)}
+#app :is(.brief-title,.travel-metrics strong,.overview-card>strong){font-weight:350;letter-spacing:-.04em}
+#app .brief-title{font-size:clamp(32px,3vw,44px)}
+#app .type-pill{color:var(--editorial-sage);border-color:color-mix(in srgb,var(--editorial-sage) 32%,var(--line));background:color-mix(in srgb,var(--editorial-sage) 8%,var(--panel))}
+#app .restaurant-cuisine-tag{color:var(--editorial-terra);border-color:color-mix(in srgb,var(--editorial-terra) 38%,var(--line));background:var(--panel)}
+.primary-btn,.secondary-btn,.icon-btn,.mini-btn,.mini-add-btn{border-radius:7px;box-shadow:none}
+.secondary-btn,.icon-btn,.mini-btn{background:var(--panel)}
+input:not([type=checkbox]):not([type=radio]),textarea,select{border-radius:7px}
+:is(button,input,select,textarea,a,[tabindex]):focus-visible{outline:2px solid var(--focus-color);outline-offset:2px}
+
+/* Replace the earlier moving ink and entrance effects with quiet hierarchy. */
+:root[data-theme="dark"] #app :is(.page-title,.section-head>h2,.video-row-head h2,.brief-title,.restaurant-card h2,.project-card h2,.asset-summary-grid .panel:nth-child(2) strong,.asset-card dl>div:nth-child(3) dd,.travel-metrics strong),
+#app :is(.page-title,.section-head>h2,.video-row-head h2,.brief-title,.restaurant-card h2,.project-card h2,.asset-summary-grid .panel:nth-child(2) strong,.asset-card dl>div:nth-child(3) dd,.travel-metrics strong){
+  background-image:none;-webkit-text-fill-color:currentColor;color:var(--text);animation:none;
+}
+#app .bento-reveal-pending,#app .bento-reveal-pending.bento-reveal-visible{opacity:1;transform:none;transition:none}
+.auth-card,.modal,.global-search-dialog{border-radius:8px;box-shadow:var(--shadow-overlay)}
+
+@media(max-width:1100px) and (min-width:781px){
+  #app .dashboard-grid{grid-template-columns:minmax(0,1fr) minmax(270px,.8fr)}
+}
+@media(max-width:780px){
+  #app{padding:24px 20px calc(90px + var(--safe-bottom))}
+  #app .dashboard-grid{grid-template-columns:minmax(0,1fr)}
+  #app>.page-head{margin-bottom:24px}
+  .mobile-bottom-nav:not([hidden]){background:var(--panel)}
+  #app :is(.dashboard-grid,.dashboard-col,.card-grid,.project-grid,.overview-grid,.automation-grid,.restaurant-grid,.month-page-grid){gap:12px}
+}
+@media(max-width:390px){#app{padding-inline:16px}}
+@media(prefers-reduced-motion:reduce){.topbar,.sidebar{transition:none}}

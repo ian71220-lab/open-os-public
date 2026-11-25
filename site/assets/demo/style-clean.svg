@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650">
+<rect width="1000" height="650" fill="#f5f6f2"/><rect x="78" y="75" width="844" height="500" rx="28" fill="#ffffff" stroke="#d7dbd4"/>
+<rect x="125" y="125" width="305" height="395" rx="16" fill="#dbe4df"/><rect x="468" y="125" width="405" height="76" rx="14" fill="#202923"/>
+<rect x="468" y="235" width="280" height="22" rx="11" fill="#aab5ae"/><rect x="468" y="278" width="345" height="22" rx="11" fill="#ccd3ce"/>
+<rect x="468" y="390" width="170" height="64" rx="32" fill="#202923"/>
+<text x="510" y="433" font-family="Arial" font-size="20" fill="#fff">MINIMAL</text>
+</svg>

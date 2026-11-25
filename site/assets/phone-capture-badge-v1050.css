@@ -1,0 +1,27 @@
+/* Phone and tablet fixes: notification badge stays inside the bell cell; Quick Capture
+   fields cannot widen the dialog, and the dialog cannot shift sideways. */
+@media (max-width: 780px) {
+  .topbar .notification-bell .notification-badge { top: 2px; right: 2px; }
+}
+@media (max-width: 1100px) {
+  #captureBackdrop .modal { overflow-x: clip; max-width: 100%; }
+  #captureForm,
+  #captureForm label,
+  #captureForm .generic-field,
+  #captureForm .capture-classification { min-width: 0; }
+  #captureForm input,
+  #captureForm select,
+  #captureForm textarea { min-width: 0; max-width: 100%; box-sizing: border-box; }
+  #captureForm .rich-toolbar { flex-wrap: wrap; overflow: visible; }
+  /* Start, End and Event Type share one full width on phones and tablets. */
+  #captureForm .calendar-event-date-grid { grid-template-columns: minmax(0, 1fr); }
+  /* WebKit keeps a datetime input's intrinsic width unless appearance is reset; that is what pushed
+     Start/End past the dialog edge on iPhone. 16px avoids iOS focus zoom. */
+  #captureForm input[type=datetime-local],
+  #captureForm input[type=date] {
+    -webkit-appearance: none; appearance: none; display: block;
+    width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box;
+    font-size: var(--text-body-lg); min-height: 48px; overflow: hidden;
+  }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+}

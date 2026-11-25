@@ -1,0 +1,18 @@
+/* Scoped knowledge-module UI; inherit existing Light/Graphite tokens. */
+.knowledge-toolbar{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:16px 0 20px}
+.knowledge-mode{display:flex;gap:8px;flex-wrap:wrap}.knowledge-mode .filter-chip{min-height:40px}.knowledge-mode span{margin-left:5px;font-variant-numeric:tabular-nums}
+.knowledge-search{display:grid;gap:6px;min-width:220px;max-width:360px;flex:1;color:var(--muted);font-size:var(--text-label)}.knowledge-search input{width:100%;min-width:0}
+.knowledge-favorites{margin:0 0 24px;padding:20px 24px}.knowledge-favorites .section-head{margin:0 0 12px;gap:12px}.knowledge-favorites h2{font-size:var(--text-card-title);margin:0}
+.knowledge-favorite-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 16px}
+.knowledge-favorite-row{display:flex;align-items:center;min-width:0;gap:8px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--panel)}
+.knowledge-favorite-open{display:flex;align-items:center;gap:12px;flex:1;min-width:0;padding:12px;background:transparent;border:0;border-radius:var(--radius-md);color:var(--text);text-decoration:none;text-align:left;font:inherit;cursor:pointer}
+.knowledge-favorite-open:hover{background:var(--panel-2)}.knowledge-favorite-open img{width:64px;height:40px;object-fit:cover;border-radius:6px;flex:none}.knowledge-favorite-icon{color:var(--muted)}
+.knowledge-favorite-copy{display:grid;gap:4px;min-width:0}.knowledge-favorite-copy strong{font-size:var(--text-body);font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.knowledge-favorite-copy small{font-size:var(--text-label);color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.knowledge-favorite-row>.star-btn{flex:none;margin-right:8px;min-width:40px;min-height:40px}
+#captureBackdrop.bookmark-capture .modal{width:min(640px,100%);max-width:640px}
+#captureBackdrop.bookmark-capture #captureForm{display:flex;flex-direction:column;gap:16px}
+#captureBackdrop.bookmark-capture #captureForm>.generic-field,#captureBackdrop.bookmark-capture .capture-classification,#captureBackdrop.bookmark-capture #bookmarkFields{margin:0}
+#captureBackdrop.bookmark-capture .check-label{align-self:end;min-height:44px;padding:10px 12px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--panel-2)}
+#captureBackdrop.bookmark-capture #bookmarkUrl{width:100%;font-size:var(--text-body)}
+#captureBackdrop.bookmark-capture .modal-actions{margin-top:4px;padding-top:16px;border-top:1px solid var(--line)}
+@media(max-width:740px){.knowledge-toolbar{align-items:stretch}.knowledge-search{min-width:0;max-width:none;flex-basis:100%}.knowledge-favorite-list{grid-template-columns:1fr}.knowledge-favorites{padding:16px}.knowledge-mode .filter-chip,.knowledge-favorite-row>.star-btn{min-width:44px;min-height:44px}#captureBackdrop.bookmark-capture .field-grid.two{grid-template-columns:1fr}#captureBackdrop.bookmark-capture .check-label{align-self:stretch}}

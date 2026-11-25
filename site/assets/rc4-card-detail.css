@@ -1,0 +1,29 @@
+/* RC4: scoped brand contrast and read-only credit-card hierarchy. */
+.sidebar .brand{color:var(--text);min-width:0}
+.sidebar .brand>span{min-width:0}
+.sidebar .brand strong{display:block;color:var(--text);white-space:nowrap}
+.sidebar .brand small{color:var(--muted);white-space:nowrap}
+
+#app:has(>.utility-credit) .credit-card-preview{cursor:pointer}
+#app:has(>.utility-credit) .credit-card-preview h2{margin-bottom:var(--space-2);overflow-wrap:anywhere}
+#app:has(>.utility-credit) .credit-card-preview .card-finance-grid{margin:var(--space-4) 0 var(--space-3)}
+.credit-benefit-summary{border-top:1px solid var(--line);padding-top:var(--space-3)}
+.credit-benefit-summary h3,.credit-detail-section h3{font-size:var(--text-label);color:var(--muted);margin:0 0 var(--space-2)}
+.credit-benefit-summary ul{list-style:none;margin:0;padding:0}
+.credit-benefit-summary li{font-size:var(--text-small);line-height:var(--leading-body);padding:var(--space-1) 0;overflow-wrap:anywhere}
+#app:has(>.utility-credit) .credit-benefit-summary p{color:var(--muted);margin:0;font-size:var(--text-small)}
+.credit-card-actions{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:var(--space-4)}
+.credit-card-actions .secondary-btn{min-height:44px}
+.credit-card-detail{max-width:100%;overflow-x:hidden}
+.credit-card-detail .modal-header{align-items:flex-start}
+.credit-card-detail .modal-header h2{margin:var(--space-2) 0}
+.credit-card-detail .card-finance-grid{margin:var(--space-4) 0;gap:0;border-top:1px solid var(--line)}
+.credit-card-detail .card-finance-grid>div{min-width:0;padding:var(--space-3) 0;border-bottom:1px solid var(--line)}
+.credit-card-detail .card-finance-grid small,.credit-card-detail .card-finance-grid b{display:block}
+.credit-card-detail .card-finance-grid small{color:var(--muted);font-size:var(--text-label)}
+.credit-card-detail .card-finance-grid b{font-size:var(--text-body);overflow-wrap:anywhere}
+.credit-detail-section{padding-block:var(--space-4);border-top:1px solid var(--line)}
+.credit-rich-content{max-width:78ch;font-size:var(--text-body);line-height:var(--leading-body);white-space:pre-wrap;overflow-wrap:anywhere}
+.credit-rich-content .rich-table-scroll{max-width:100%;white-space:normal}
+@media(max-width:780px){.credit-card-detail .card-finance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.credit-card-actions>*{flex:1 1 auto}}
+@media (hover:hover) and (pointer:fine){#app:has(>.utility-credit) .credit-card-preview:hover{border-color:var(--line-strong)}}

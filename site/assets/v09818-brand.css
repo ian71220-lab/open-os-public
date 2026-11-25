@@ -1,0 +1,24 @@
+.brand-asset{position:relative;display:inline-grid;place-items:center;flex:none;line-height:0}
+.brand-asset img{display:block;width:100%;height:100%;object-fit:contain}
+.brand-asset-dark{display:none}
+:root[data-theme="dark"] .brand-asset-light{display:none}
+:root[data-theme="dark"] .brand-asset-dark{display:block}
+
+/* Preserve the existing dedicated artwork selection; the light theme
+   adapts this monochrome asset to its neutral surface below. */
+:root .sidebar .brand-asset-compact .brand-asset-light{display:none}
+:root .sidebar .brand-asset-compact .brand-asset-dark{display:block}
+
+.brand{padding:0;min-width:0}
+.brand-asset-compact{width:62px;height:49px}
+.mobile-brand{display:none;place-items:center;flex:0 0 32px;width:32px;height:32px;margin:0;padding:0;border:0;background:transparent;cursor:pointer}
+.brand-asset-symbol{width:30px;height:30px}
+.auth-brand-asset{width:min(230px,70vw);height:auto;aspect-ratio:1000/890;margin:0 auto var(--space-5)}
+
+@media(max-width:780px){
+  .mobile-brand{display:inline-grid}
+  .brand-asset-symbol{width:28px;height:28px}
+}
+
+/* Sidebar artwork remains the existing asset, adapted to the neutral light surface. */
+:root:not([data-theme="dark"]) .sidebar .brand-asset-compact img{filter:invert(1)}

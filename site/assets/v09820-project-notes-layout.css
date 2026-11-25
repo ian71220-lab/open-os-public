@@ -1,0 +1,121 @@
+/* v0.9.8.20 — targeted Project description and Notes index layout patch. */
+
+/* Project actions and outer hero remain unchanged; only the rendered
+   description is released from legacy editorial width constraints. */
+#app .project-hero .project-hero-copy{
+  width:100%;
+  max-width:none;
+  min-width:0;
+}
+#app .project-hero .project-description{
+  width:100%;
+  max-width:none;
+  inline-size:100%;
+  max-inline-size:none;
+  box-sizing:border-box;
+}
+#app .project-hero .project-description>*{
+  max-width:none;
+  max-inline-size:none;
+}
+
+/* Notes index: compact document-library rows. Note details retain their
+   existing full-content renderer and layout. */
+#app .note-list{
+  display:grid;
+  width:100%;
+  border-block-start:1px solid var(--line);
+}
+#app .note-list-row{
+  display:grid;
+  grid-template-columns:32px minmax(180px,1fr) minmax(180px,.65fr) auto auto;
+  grid-template-areas:"icon copy taxonomy date actions";
+  align-items:center;
+  gap:var(--space-3);
+  min-width:0;
+  min-height:0;
+  padding:var(--space-4) var(--space-3);
+  border:0;
+  border-block-end:1px solid var(--line);
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+#app .note-list-icon{
+  grid-area:icon;
+  display:grid;
+  place-items:center;
+  width:32px;
+  height:32px;
+  border:1px solid var(--line);
+  border-radius:var(--radius-sm);
+  background:var(--panel-2);
+  color:var(--muted);
+  font-size:var(--text-body);
+}
+#app .note-list-copy{grid-area:copy;min-width:0}
+#app .note-list-row h3{
+  margin:0 0 var(--space-1);
+  overflow:hidden;
+  color:var(--text);
+  font-size:var(--text-card-title);
+  line-height:var(--leading-heading);
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+#app .note-list-row .note-list-copy>p{
+  display:-webkit-box;
+  margin:0;
+  overflow:hidden;
+  color:var(--muted);
+  font-size:var(--content-font-size);
+  line-height:var(--content-leading);
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  line-clamp:2;
+  overflow-wrap:anywhere;
+}
+#app .note-list-taxonomy{
+  grid-area:taxonomy;
+  display:flex;
+  min-width:0;
+  align-items:center;
+  gap:var(--space-1);
+  overflow:hidden;
+}
+#app .note-list-taxonomy :is(.category-pill,.tag){flex:0 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#app .note-list-date{grid-area:date;color:var(--muted);font-size:var(--text-micro);white-space:nowrap}
+#app .note-list-actions{grid-area:actions;display:flex;flex-wrap:nowrap;align-items:center;gap:var(--space-1);white-space:nowrap}
+#app .note-list-actions>*{flex:0 0 auto}
+
+@media (hover:hover) and (pointer:fine){
+  #app .note-list-row:hover{
+    transform:none;
+    border-color:var(--line);
+    background:var(--panel-2);
+    box-shadow:none;
+  }
+}
+
+@media(max-width:980px){
+  #app .note-list-row{
+    grid-template-columns:32px minmax(0,1fr) auto;
+    grid-template-areas:
+      "icon copy actions"
+      "icon taxonomy date";
+  }
+}
+
+@media(max-width:600px){
+  #app .note-list-row{
+    grid-template-columns:32px minmax(0,1fr) auto;
+    grid-template-areas:
+      "icon copy actions"
+      ". taxonomy taxonomy"
+      ". date date";
+    align-items:start;
+    padding-inline:var(--space-2);
+  }
+  #app .note-list-taxonomy{flex-wrap:wrap;overflow:visible}
+  #app .note-list-row h3{white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}
+}

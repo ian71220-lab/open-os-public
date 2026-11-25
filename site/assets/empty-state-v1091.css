@@ -1,0 +1,5 @@
+/* OPEN OS empty states (v1.0.9.1): one inline variant for list sections, a smaller page-level block on phones. */
+.empty-inline{padding:var(--space-4);border:1px dashed var(--line-strong);border-radius:var(--radius-lg);text-align:center;color:var(--muted);font-size:var(--text-small);line-height:1.5}
+@media (max-width:780px){
+  .empty-state{padding:40px 20px}
+}

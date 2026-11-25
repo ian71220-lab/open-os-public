@@ -1,0 +1,8 @@
+#pwa-update-notice{position:fixed;z-index:1000;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));width:min(390px,calc(100vw - 32px));padding:15px 16px;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--panel);color:var(--text);box-shadow:var(--shadow-overlay);display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:6px 14px}
+#pwa-update-notice[hidden]{display:none}
+#pwa-update-notice p{grid-column:1/-1;margin:0;color:var(--muted);font-size:var(--text-label);line-height:1.5}
+#pwa-update-notice strong{font-size:var(--text-small)}
+#pwa-update-notice .pwa-update-actions{display:flex;gap:7px;grid-column:1/-1;justify-content:flex-end}
+#pwa-update-notice button{min-height:36px}
+#pwa-update-notice :focus-visible{outline:2px solid var(--focus-color);outline-offset:2px}
+@media(max-width:600px){#pwa-update-notice{right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));width:calc(100vw - 24px);grid-template-columns:1fr}#pwa-update-notice .pwa-update-actions{justify-content:stretch}#pwa-update-notice .pwa-update-actions button{flex:1}}

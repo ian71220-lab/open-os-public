@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="application-name" content="OPEN OS" />
+  <meta name="theme-color" content="#f5f5f7" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/brand/favicon-16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/brand/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/brand/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+TC:wght@400;500;600;700&amp;display=swap" />
+  <title>OPEN OS Public Mirror</title>
+  <link rel="stylesheet" href="assets/app.css?v=612b3479" />
+  <link rel="stylesheet" href="assets/global-search-v1048.css?v=e14fe98f" />
+  <link rel="stylesheet" href="assets/dashboard.css?v=e7eb239a" />
+  <link rel="stylesheet" href="assets/operational-lists.css?v=37f9130e" />
+  <link rel="stylesheet" href="assets/operational-revision.css?v=fb5548c3" />
+<link rel="stylesheet" href="assets/automation-phase2.css?v=77c8e5da">
+  <link rel="stylesheet" href="assets/operational-calendar-health.css?v=25677138" />
+  <link rel="stylesheet" href="assets/operational-automations-travel.css?v=9cb89b28" />
+  <link rel="stylesheet" href="assets/editorial-content.css?v=5540fb06" />
+  <link rel="stylesheet" href="assets/utility-a.css?v=2d5b5e76" />
+  <link rel="stylesheet" href="assets/ui-polish2.css?v=01de0753" />
+  <link rel="stylesheet" href="assets/home-quick-links.css?v=6ba40249" />
+  <link rel="stylesheet" href="assets/rc3-refinement.css?v=8a72849d" />
+  <link rel="stylesheet" href="assets/rc4-card-detail.css?v=b10c7dbc" />
+  <link rel="stylesheet" href="assets/rc5-credit-detail.css?v=73b80a01" />
+  <link rel="stylesheet" href="assets/rc6-ui-consistency.css?v=a132eb22" />
+  <link rel="stylesheet" href="assets/rc7-small-refinements.css?v=7d74c8fa" />
+  <link rel="stylesheet" href="assets/rc8-small-refinements.css?v=7b2ce8a6" />
+  <link rel="stylesheet" href="assets/v098-features.css?v=c4499ca8" />
+  <link rel="stylesheet" href="assets/delete-consistency.css?v=146c4464" />
+  <link rel="stylesheet" href="assets/v0984-ui-consistency.css?v=fbb90db4" />
+  <link rel="stylesheet" href="assets/v0985-notes-bookmarks-polish.css?v=f31124a6" />
+  <link rel="stylesheet" href="assets/v0986-home-assets-native.css?v=75ac79ca" />
+  <link rel="stylesheet" href="assets/v0988-ui-consistency.css?v=8e3c8cab" />
+  <link rel="stylesheet" href="assets/v09811-rich-editor.css?v=3be009af" />
+  <link rel="stylesheet" href="assets/v09814-attachments.css?v=a42a91b9" />
+  <link rel="stylesheet" href="assets/v0985-global-content-typography.css?v=bcd1fca3" />
+  <link rel="stylesheet" href="assets/v09818-brand.css?v=8728f071" />
+  <link rel="stylesheet" href="assets/v09820-project-notes-layout.css?v=e33ae39e" />
+  <link rel="stylesheet" href="assets/v09822-safari-prompt.css?v=4a41bd50" />
+  <link rel="stylesheet" href="assets/v09823-calendar-reminders.css?v=cde9d984" />
+  <link rel="stylesheet" href="assets/v09824-calendar-home.css?v=f5769629" />
+  <link rel="stylesheet" href="assets/v09825-calendar-agenda.css?v=ede3a66c" />
+  <link rel="stylesheet" href="assets/v099-system.css?v=28613d0d" />
+  <link rel="stylesheet" href="assets/topbar-v0993.css?v=9c545bf5" />
+  <link rel="stylesheet" href="assets/automation-dashboard-polish.css?v=66ccc3f7" />
+  <link rel="stylesheet" href="assets/notification-center.css?v=4caa9d01" />
+  <link rel="stylesheet" href="assets/v104-graphite-restaurants.css?v=b18e3368" />
+  <link rel="stylesheet" href="assets/knowledge-favorites.css?v=4aa03541" />
+  <link rel="stylesheet" href="assets/pwa.css?v=9ebebcf7" />
+  <link rel="stylesheet" href="assets/modern-planner.css?v=41a1e166" />
+<link rel="stylesheet" href="assets/rwd-touch-1044.css?v=c841199f" />
+  <link rel="stylesheet" href="assets/nav-rail-v1045.css?v=f6f3b956" />
+  <link rel="stylesheet" href="assets/mobile-calendar-v1045.css?v=3c439109" />
+  <link rel="stylesheet" href="assets/mobile-bottom-nav-v1045.css?v=c8f463f4" />
+  <link rel="stylesheet" href="assets/mobile-text-floor-v1050.css?v=18c1f28d" />
+  <link rel="stylesheet" href="assets/contrast-v1050.css?v=7a153a06" />
+  <link rel="stylesheet" href="assets/phone-capture-badge-v1050.css?v=1e946ac0" />
+  <link rel="stylesheet" href="assets/timeline-head-v1060.css?v=5d21e824" />
+  <link rel="stylesheet" href="assets/mobile-header-v1060.css?v=51ca376d" />
+  <link rel="stylesheet" href="assets/home-ai-status-v1070.css?v=9e1bcc75" />
+  <link rel="stylesheet" href="assets/workboard.css?v=44bf72f2" />
+  <link rel="stylesheet" href="assets/home-polish-v1080.css?v=087ffeb2" />
+  <link rel="stylesheet" href="assets/empty-state-v1091.css?v=895fc134" />
+  <link rel="stylesheet" href="assets/bento-layout-v10423.css?v=3d463a83" />
+  <link rel="stylesheet" href="assets/travel-daily-v10426.css?v=da21a473" />
+  <link rel="stylesheet" href="assets/travel-meals-v10427.css?v=8916e16a" />
+  <link rel="stylesheet" href="assets/editorial-dashboard-v10428.css?v=f296b2e2" />
+  <link rel="stylesheet" href="assets/editorial-fixes-v10429.css?v=e46d8090" />
+  <link rel="stylesheet" href="assets/ui-icons-v10437.css?v=fca1b4d2" />
+  <link rel="stylesheet" href="assets/sidebar-pinned-v10438.css?v=8a71ec2d" />
+  <link rel="stylesheet" href="assets/tasks-polish-v10439.css?v=0c81f52a" />
+  <link rel="stylesheet" href="assets/keyboard-reorder-v10440.css?v=e6b38789" />
+  <link rel="stylesheet" href="assets/card-feedback-v10441.css?v=03b87bc4" />
+  <link rel="stylesheet" href="assets/row-menu-v10441.css?v=e6acc816" />
+  <link rel="stylesheet" href="assets/travel-checklist-grid-v10436.css?v=f5a12697" />
+  <link rel="stylesheet" href="assets/credit-workboard-v10430.css?v=6e3eae0b" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-row">
+        <button class="brand" data-view="home" aria-label="OPEN OS Home">
+          <span class="brand-asset brand-asset-compact" aria-hidden="true"><img src="assets/brand/open-os-compact.svg" alt=""></span>
+        </button>
+        <button type="button" class="icon-btn nav-rail-toggle" id="navRailToggle" aria-label="收合導覽列" title="收合導覽列" aria-expanded="true" aria-controls="mainNavigation">☰</button>
+        <button class="icon-btn sidebar-close" id="sidebarClose" aria-label="Close sidebar">×</button>
+      </div>
+      <div id="mobileTopbarControls" class="mobile-topbar-controls"></div>
+      <nav class="nav-list" id="mainNavigation" aria-label="Main navigation">
+        <button class="nav-item active" data-view="home"><span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span><b data-i18n="home">首頁</b></button>
+        <div class="nav-label" data-i18n="navKnowledge">知識</div>
+        <button class="nav-item" data-view="notes"><span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4z M7 8h10 M7 12h10 M7 16h6"/></svg></span><b data-i18n="notes">筆記</b></button>
+        <button class="nav-item" data-view="prompts"><span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></span><b>Prompts</b></button>
+        <button class="nav-item" data-view="skills"><span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 3v18 M3 9h18 M3 15h18"/></svg></span><b>Skills</b></button>
+        <button class="nav-item" data-view="videos"><span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h16v14H4z M10 9.5l5 2.5-5 2.5z"/></svg></span><b data-i18n="videos">影音牆</b></button>
+        <button class="nav-item" data-view="bookmarks"><span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 4h14v16l-7-3-7 3z"/></svg></span><b data-i18n="bookmarks">書籤</b></button>
+        <div class="nav-label" data-i18n="navLife">生活</div>
+        <button class="nav-item" data-view="home-assets"><span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10l8-6 8 6v9H4z M9 19v-6h6v6"/></svg></span><b data-i18n="homeAssets">家中物品管理</b></button>
+        <button class="nav-item" data-view="credit-cards"><span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h18v12H3z M3 10h18 M6 15h4"/></svg></span><b data-i18n="creditCards">信用卡管理</b></button>
+        <button class="nav-item" data-view="travel"><span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.5 3.5h3l-1 6.5 6 3.5v2l-6-1.5-.5 4 2 1.5v1.5L12 20.5l-3 1v-1.5l2-1.5-.5-4-6 1.5v-2l6-3.5z"/></svg></span><b data-i18n="travel">旅遊規劃</b></button>
+        <button class="nav-item" data-view="vendors"><span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 9l1.5-5h13L20 9 M4 9h16v11H4z M9 20v-6h6v6"/></svg></span><b data-i18n="vendors">商家與廠商</b></button>
+        <button class="nav-item" data-view="restaurants"><span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3v7a2 2 0 0 0 2 2v9 M5 3v5 M9 3v5 M16 21V3c-2 1-3 3-3 6s1 4 3 4"/></svg></span><b>美食餐廳</b></button>
+        <div class="nav-label" data-i18n="navWorkspace">工作空間</div>
+        <button class="nav-item" data-view="routines"><span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4z M8 12l3 3 5-6"/></svg></span><b>Routine checklist</b></button>
+        <button class="nav-item" data-view="tasks"><span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z M8 12l3 3 5-6"/></svg></span><b data-i18n="reminders">待辦與提醒</b></button>
+        <div class="nav-tree" data-tree="projects">
+          <button class="nav-item nav-parent" data-view="projects"><span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h6l2 2h10v11H3z"/></svg></span><b data-i18n="projects">專案</b><i class="tree-chevron"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></i></button>
+          <div class="nav-children" id="projectTree"></div>
+        </div>
+        <div class="nav-tree" data-tree="calendar">
+          <button class="nav-item nav-parent" data-view="calendar"><span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h16v16H4z M8 2v6 M16 2v6 M4 10h16"/></svg></span><b data-i18n="calendar">行程</b><i class="tree-chevron"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></i></button>
+          <div class="nav-children" id="calendarTree"></div>
+        </div>
+        <div class="nav-tree" data-tree="communications">
+          <button class="nav-item nav-parent" data-view="communications"><span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h16v11H8l-4 3z"/></svg></span><b data-i18n="communications">訊息紀錄</b><i class="tree-chevron"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></i></button>
+          <div class="nav-children" id="communicationTree"></div>
+        </div>
+        <button class="nav-item" data-view="automations"><span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span><b data-i18n="automations">自動化</b></button>
+        <button class="nav-item" data-view="system-health"><span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span><b data-i18n="health">系統健康</b></button>
+        <div class="nav-tree" data-tree="graph">
+          <button class="nav-item nav-parent" data-view="graph"><span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4z M5 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4z M19 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4z M12 8v4 M12 12l-5 4 M12 12l5 4"/></svg></span><b data-i18n="graph">關聯圖譜</b><i class="tree-chevron"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></i></button>
+          <div class="nav-children" id="graphTree"></div>
+        </div>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-meta">
+        <button class="nav-item" data-view="settings"><span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6h10 M18 6h2 M4 12h4 M12 12h8 M4 18h12 M20 18h0 M14 4v4 M8 10v4 M16 16v4"/></svg></span><b data-i18n="settings">設定 · 分類管理</b></button>
+        <button class="nav-item" id="exportBtn"><span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v12 M7 10l5 5 5-5 M4 20h16"/></svg></span><b data-i18n="export">匯出 JSON</b></button>
+        <button class="nav-item" id="resetBtn" hidden><span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12a8 8 0 1 0 2.4-5.7 M4 4v5h5"/></svg></span><b data-i18n="reset">重設示範資料</b></button>
+      </div>
+    </aside>
+
+    <div class="main-wrap">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-brand" data-view="home" aria-label="OPEN OS Home"><span class="brand-asset brand-asset-symbol" aria-hidden="true"><img src="assets/brand/open-os-mark.svg" data-brand-light="assets/brand/open-os-mark.svg" data-brand-dark="assets/brand/open-os-mark.svg" alt=""></span></button>
+          <div class="global-search-wrap">
+            <span class="search-icon">⌕</span>
+            <input id="globalSearch" type="search" placeholder="搜尋展示資料…" autocomplete="off" />
+            <kbd>/</kbd>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <button type="button" class="icon-btn global-search-mobile" id="globalSearchMobile" aria-label="開啟全域搜尋" aria-haspopup="dialog" aria-expanded="false">⌕</button>
+          <div class="topbar-secondary" id="topbarSecondary">
+          <span class="sync-status" id="syncStatus" data-state="offline" role="status" aria-live="polite">OFFLINE</span><span class="build-label" title="目前網站版本">v1.0.4.45</span>
+          <button class="icon-btn" id="themeBtn" aria-label="Toggle theme"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18z M12 3v18"/></svg></button>
+          <button class="account-btn" id="accountBtn" hidden aria-label="Account" aria-controls="accountMenu" aria-expanded="false"></button>
+          </div>
+          <button type="button" class="icon-btn notification-bell" id="notificationBell" aria-label="站內通知" aria-controls="notificationDropdown" aria-expanded="false" title="站內通知"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/><path d="M10 21h4"/></svg><span id="notificationBadge" class="notification-badge" hidden>0</span></button>
+          <button class="primary-btn" id="addBtn" aria-label="新增">＋ <span data-i18n="add">新增</span></button>
+          <button class="icon-btn mobile-menu" id="menuBtn" aria-label="Open sidebar" aria-controls="sidebar" aria-expanded="false">☰</button>
+        </div>
+      </header>
+      <main id="app"></main>
+    </div>
+  </div>
+
+  <div id="navRailBackdrop" class="nav-rail-backdrop" hidden></div>
+
+  <aside id="notificationDropdown" class="notification-dropdown" hidden aria-label="最新站內通知"><div class="notification-dropdown-head"><strong>通知中心</strong><button type="button" class="secondary-btn compact" id="notificationRefresh">重新整理</button></div><div id="notificationDropdownItems" class="notification-dropdown-items"></div><button type="button" class="notification-all-link" id="notificationAll">查看全部通知 →</button></aside>
+
+  <div class="auth-gate" id="authGate" hidden>
+    <section class="auth-card" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <span class="brand-asset auth-brand-asset"><img src="assets/brand/open-os-full.svg" data-brand-light="assets/brand/open-os-full.svg" data-brand-dark="assets/brand/open-os-full.svg" alt="OPEN OS"></span>
+      <div class="eyebrow">LOCAL PUBLIC DEMO</div>
+      <h1 id="authTitle">OPEN OS 展示模式</h1>
+      <p>這是虛構資料的本機展示版本。</p>
+      <form id="authForm">
+        <label><span>Email</span><input id="authEmail" name="email" type="email" inputmode="email" autocomplete="username" autocapitalize="none" spellcheck="false" required /></label>
+        <label><span>密碼</span><input id="authPassword" name="password" type="password" autocomplete="current-password" required /></label>
+        <button class="primary-btn auth-submit" id="authSubmit" type="submit">登入</button>
+      </form>
+      <div class="auth-message" id="authMessage" role="alert" aria-live="polite"></div>
+      <small>個人工作區</small>
+    </section>
+  </div>
+
+  <div class="account-menu" id="accountMenu" hidden>
+    <strong id="accountEmail"></strong>
+    <span>展示資料僅儲存在這個瀏覽器</span>
+    <div class="account-avatar-actions">
+      <button type="button" class="secondary-btn" id="avatarUploadBtn">上傳／更換頭像</button>
+      <button type="button" class="secondary-btn" id="avatarRemoveBtn" hidden>移除頭像</button>
+      <input type="file" id="avatarFile" accept="image/png,image/jpeg,image/webp" hidden aria-label="選擇頭像圖片" />
+      <p id="avatarError" role="alert" hidden></p>
+    </div>
+    <button class="secondary-btn" id="signOutBtn" hidden>展示模式</button>
+  </div>
+
+  <div class="modal-backdrop" id="captureBackdrop" hidden>
+    <section class="modal modal-wide" role="dialog" aria-modal="true" aria-labelledby="captureTitleText">
+      <div class="modal-header">
+        <div><div class="eyebrow">QUICK CAPTURE</div><h2 id="captureTitleText">新增到 OPEN OS</h2></div>
+        <button class="icon-btn" id="captureClose" aria-label="Close">×</button>
+      </div>
+      <form id="captureForm">
+        <input type="hidden" id="editingId" />
+        <div class="field-grid two capture-classification">
+          <label><span>類型 / Type</span>
+            <select id="captureType">
+              <option value="note">筆記 Note</option><option value="prompt">Prompt</option><option value="skill">Skill</option>
+              <option value="video">影片 Video</option><option value="bookmark">書籤 Bookmark</option><option value="task">待辦 Task</option>
+              <option value="event">行程 Event</option><option value="communication">Email / 訊息紀錄</option>
+            </select>
+          </label>
+          <div class="category-field">
+            <span class="field-caption">分類 / Category</span>
+            <div class="category-control"><select id="captureCategory"></select><button type="button" class="mini-add-btn" id="categoryAddBtn">＋</button></div>
+            <div class="new-category-row" id="newCategoryRow" hidden>
+              <input id="newCategoryName" placeholder="新增分類名稱" />
+              <input id="newCategoryColor" type="color" value="#4f7cff" aria-label="Category color" />
+              <button type="button" class="secondary-btn compact" id="saveCategoryBtn">新增</button>
+              <button type="button" class="text-btn" id="cancelCategoryBtn">取消</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="generic-field"><label><span>標題 / Title</span><input id="captureTitle" /></label></div>
+        <div class="generic-field"><label><span>簡介 / Description</span><textarea id="captureDescription" rows="2"></textarea></label></div>
+        <div class="generic-field"><label><span id="contentText">內容 / Content</span><textarea id="captureContent" rows="7"></textarea></label></div>
+        <section class="capture-images" id="captureImagesSection" aria-labelledby="captureImagesLabel">
+          <div class="capture-images-head"><span class="field-label" id="captureImagesLabel">圖片 / Images</span><label class="secondary-btn compact capture-images-add"><span class="capture-images-add-icon" aria-hidden="true">＋</span><span class="capture-images-add-label">加入圖片 / Add Images</span><input id="captureImagesInput" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif" multiple /></label></div>
+          <p class="field-hint">JPEG、PNG、WebP、HEIC · 每張最多 25 MB</p>
+          <div class="capture-image-grid" id="captureImageGrid" aria-live="polite"></div>
+        </section>
+        <div class="generic-field"><div class="field-grid two"><label><span>標籤 / Tags</span><input id="captureTags" placeholder="design, threads, work" /></label><label class="check-label"><input id="captureFavorite" type="checkbox" /> ★ 收藏 / Favorite</label></div></div>
+
+        <div id="noteFields" class="conditional-fields is-hidden"><label><span>影片連結 / Video URL</span><input id="noteVideoUrl" type="url" placeholder="YouTube / Vimeo / MP4 影片網址" /></label></div>
+        <div id="promptFields" class="conditional-fields is-hidden">
+          <div class="prompt-edit-section"><div class="field-label">風格參考圖片 / Style Images</div><div id="styleImageEditor" class="style-editor"></div></div>
+          <div class="field-grid two">
+            <label><span>新增圖片網址（每行一張）</span><textarea id="promptImageUrls" rows="4" placeholder="https://…"></textarea></label>
+            <label><span>加入風格圖片（從電腦選取）</span><input id="promptImageUpload" type="file" accept="image/*" multiple /><small class="field-hint">不限制圖片比例。原始寬高、格式與檔案大小會記錄；超大原圖可能超過瀏覽器本機儲存容量。</small></label>
+          </div>
+        </div>
+        <div id="videoFields" class="conditional-fields is-hidden">
+          <div class="field-grid two"><label><span>影片 URL</span><input id="videoUrl" type="url" placeholder="YouTube / Vimeo / MP4" /></label><label><span>自訂封面 URL（選填）</span><input id="videoThumbnailUrl" type="url" placeholder="留空則自動使用 YouTube 封面" /></label></div>
+          <div class="info-note">時間碼筆記可直接寫在「內容」中，例如：<strong>00:16 觀察卡片排版</strong>。詳細觀看頁會自動辨識時間碼。</div>
+        </div>
+        <div id="bookmarkFields" class="conditional-fields is-hidden"><label><span>URL</span><input id="bookmarkUrl" type="url" placeholder="https://…" /></label></div>
+        <div id="taskFields" class="conditional-fields is-hidden"><div class="field-grid three"><label><span>到期設定</span><select id="taskDueMode"><option value="date">設定到期日</option><option value="none">無到期日</option></select></label><label><span>到期日</span><input id="taskDueDate" type="date" /></label><label><span>狀態</span><select id="taskStatus"><option value="todo">待處理</option><option value="reminder">提醒</option><option value="doing">進行中</option><option value="done">完成</option><option value="cancelled">已取消</option></select></label></div><div class="field-grid two"><label><span>優先順序</span><select id="taskPriority"><option value="high">高</option><option value="medium">中</option><option value="low">低</option></select></label><label><span>範圍</span><select id="taskScope"><option value="work">工作</option><option value="life">生活</option></select></label></div><label><span>提醒時間（選填）</span><input id="taskReminder" type="datetime-local" /></label><small class="field-hint">可建立沒有截止日期、但只需要記住或提醒自己的事項。</small></div>
+        <div id="eventFields" class="conditional-fields is-hidden">
+          <div class="calendar-event-options">
+            <label class="calendar-event-option"><input id="eventAllDay" type="checkbox"><span>整天活動 / All-day</span></label>
+            <label class="calendar-event-option"><input id="eventCompleted" type="checkbox"><span>已完成 / Completed</span></label>
+          </div>
+          <div class="calendar-event-date-grid">
+            <label><span>開始 / Start</span><input id="eventStart" type="datetime-local"></label>
+            <label><span>結束 / End</span><input id="eventEnd" type="datetime-local"></label>
+          </div>
+          <label class="calendar-event-type-field"><span>類型 / Event Type</span><select id="eventType"><option value="work">工作 / Work</option><option value="personal">個人 / Personal</option></select></label>
+        </div>
+        <div id="communicationFields" class="conditional-fields is-hidden">
+          <div class="field-grid three"><label><span>管道</span><select id="commChannel"><option>Email</option><option value="Message">訊息 / Message</option><option>Teams</option><option>Slack</option><option>Text</option><option>Phone</option><option>Other</option></select></label><label><span>方向</span><select id="commDirection"><option value="received">收到</option><option value="sent">已回覆 / 寄出</option></select></label><label><span>狀態</span><select id="commStatus"><option value="follow-up">需追蹤</option><option value="waiting">等待回覆</option><option value="done">完成</option><option value="archived">已封存</option></select></label></div>
+          <div class="field-grid two"><label><span>對象</span><input id="commContact" /></label><label><span>日期時間</span><input id="commDateTime" type="datetime-local" /></label></div>
+        </div>
+        <section id="captureChecklist" class="capture-checklist"></section>
+        <div class="modal-actions"><button type="button" class="secondary-btn" id="captureCancel">取消</button><button class="primary-btn" type="submit">儲存</button></div>
+      </form>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" id="promptBackdrop" hidden>
+    <section class="prompt-modal" role="dialog" aria-modal="true" aria-label="Prompt 詳細內容">
+      <button type="button" class="prompt-close" id="promptClose" aria-label="關閉 Prompt 詳細內容">×</button>
+      <div id="promptDetailContent"></div>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" id="imageBackdrop" hidden>
+    <section class="image-viewer" role="dialog" aria-modal="true" aria-label="圖片檢視器">
+      <button type="button" class="prompt-close" id="imageClose" aria-label="關閉圖片檢視器">×</button>
+      <div id="imageViewerContent"></div>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" id="videoBackdrop" hidden>
+    <section class="video-modal" role="dialog" aria-modal="true" aria-label="影音詳細內容">
+      <button type="button" class="prompt-close" id="videoClose" aria-label="關閉影音詳細內容">×</button>
+      <div id="videoDetailContent"></div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/icons.js?v=44ab359b"></script>
+  <script src="js/demo-store.js?v=c9b64d90"></script>
+  <script src="js/data.js?v=0c812bc9"></script>
+  <script src="js/home-quick-links-data.js?v=86819ea7"></script>
+  <script src="js/home-quick-links.js?v=cf9119f5"></script>
+  <script src="js/score-cards.js?v=86e7374e"></script>
+  <script src="js/input-tools.js?v=868b8da4"></script>
+  <script src="js/flights.js?v=8e983023"></script>
+  <script src="js/routines.js?v=ef9f2f22"></script>
+  <script src="js/roadtrips.js?v=a3ae86d7"></script>
+  <script src="js/scroll-stability.js?v=a3e070bd"></script>
+  <script src="js/planning.js?v=79270fe4"></script>
+  <script src="js/editor-tools.js?v=30f91931"></script>
+  <script src="js/editor-v09811.js?v=3e06a38d"></script>
+  <script src="js/delete-manager.js?v=465dd9a9"></script>
+  <script src="js/attachments.js?v=8a1d41ca"></script>
+  <div class="global-search-overlay" id="globalSearchOverlay" hidden>
+    <section class="global-search-dialog" role="dialog" aria-modal="true" aria-label="全域搜尋">
+      <div class="global-search-head"><label for="globalSearchDialogInput">搜尋所有模組</label><button type="button" class="icon-btn" id="globalSearchClose" aria-label="關閉搜尋">×</button></div>
+      <input type="search" id="globalSearchDialogInput" role="combobox" aria-autocomplete="list" aria-controls="globalSearchResults" aria-expanded="true" placeholder="輸入關鍵字…" autocomplete="off">
+      <p id="globalSearchStatus" role="status" aria-live="polite"></p>
+      <div id="globalSearchResults" role="listbox" aria-label="搜尋結果"></div>
+    </section>
+  </div>
+
+  <script src="js/vendors.js?v=51649f2c"></script>
+  <script src="js/home-assets.js?v=47695d13"></script>
+  <script src="js/home-layout.js?v=03edcd2f"></script>
+  <script src="js/content-utils.js?v=38f17362"></script>
+  <script src="js/pdf-export.js?v=3954ea46"></script>
+<script src="js/calendar-import.js?v=778d65b7"></script>
+<script src="js/automation.js?v=d8182d6c"></script>
+<script src="js/automation-phase2.js?v=4e72bb90"></script>
+<script src="js/notification-center.js?v=99b5da14"></script>
+<script src="js/vendor/purify.min.js?v=2c90a9b4"></script>
+<script src="js/restaurants.js?v=01c396ff"></script>
+  <script src="js/empty-guide.js?v=67244626"></script>
+  <script src="js/app-shared.js?v=7e40d37a"></script>
+  <script src="js/app-sidebar.js?v=b95af17f"></script>
+  <script src="js/app-calendar.js?v=f3d259c7"></script>
+  <script src="js/app-tasks.js?v=a22dfa81"></script>
+  <script src="js/global-search-logic.js?v=ff40f43c"></script>
+  <script src="js/global-search.js?v=3a4d955d"></script>
+  <script src="js/home-ai-status.js?v=b600c40f"></script>
+  <script src="js/workboard.js?v=5c08a189"></script>
+  <script src="js/app.js?v=074698db"></script>
+  <script src="js/topbar-v0993.js?v=3e0eab07"></script>
+  <script src="js/nav-rail-v1045.js?v=8901e88b"></script>
+  <script src="js/pwa.js?v=53fa6497"></script>
+  <script src="js/mobile-bottom-nav.js?v=14324606"></script>
+  <script src="js/bento-scroll-v10423.js?v=b7aed20a"></script>
+  <script src="js/row-menu.js?v=177f2b17"></script>
+  <script src="js/card-ripple.js?v=6a765a84"></script>
+</body>
+</html>

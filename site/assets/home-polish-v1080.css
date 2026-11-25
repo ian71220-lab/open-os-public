@@ -1,0 +1,254 @@
+/* v1.0.4.13 home polish: in-page layout editor, labeled Quick Links, editable score cards, tighter bottom space */
+
+/* Home layout editor: lives in the page (not the top bar) so phones can show every control. */
+#app > .home-layout-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin: 0 0 var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--panel);
+}
+/* Editing bar floats above the content. .main-wrap clips overflow, so sticky would not stick. */
+#app > .home-layout-toolbar.is-editing {
+  position: fixed;
+  top: auto;
+  left: calc(var(--sidebar, 270px) + 24px);
+  right: 24px;
+  bottom: 20px;
+  height: auto;
+  min-height: 0;
+  z-index: 34;
+  margin: 0;
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+}
+#app:has(> .home-layout-toolbar.is-editing) {
+  padding-bottom: calc(200px + var(--safe-bottom));
+}
+#app > .home-layout-toolbar .home-layout-copy {
+  flex: 1 1 220px;
+  min-width: 0;
+}
+#app > .home-layout-toolbar .home-layout-status {
+  display: block;
+  min-width: 0;
+  flex: 1 1 220px;
+}
+.home-layout-copy {
+  display: grid;
+  gap: 2px;
+}
+.home-layout-copy strong {
+  font-size: var(--text-label);
+  font-weight: 600;
+  color: var(--text);
+}
+.home-layout-copy small {
+  font-size: var(--text-meta);
+  line-height: 1.5;
+  color: var(--muted);
+}
+#app > .home-layout-toolbar > button {
+  min-height: var(--control-h);
+}
+#app > .home-layout-toolbar .home-layout-save {
+  margin-left: auto;
+}
+/* Touch has no HTML drag; ↑ ↓ buttons do the job, so hide the grip there. */
+@media (pointer: coarse), (max-width: 780px) {
+  [data-home-grip] { display: none !important; }
+}
+@media (max-width: 780px) {
+  #app > .home-layout-toolbar.is-editing {
+    top: auto;
+    left: 12px;
+    right: 12px;
+    bottom: calc(57px + env(safe-area-inset-bottom, 0px) + 10px);
+    padding: var(--space-2) var(--space-3);
+  }
+  #app:has(> .home-layout-toolbar.is-editing) {
+    padding-bottom: calc(57px + 150px + env(safe-area-inset-bottom, 0px));
+  }
+  #app > .home-layout-toolbar .home-layout-copy small {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #app > .home-layout-toolbar > button {
+    flex: 1 1 auto;
+  }
+  #app > .home-layout-toolbar .home-layout-save {
+    margin-left: 0;
+  }
+}
+
+/* Quick Links: every site is a labeled tile in one even grid. */
+#app:has(> .home-operational) .home-quick-links {
+  padding: var(--space-3) var(--space-4) var(--space-4);
+}
+#app:has(> .home-operational) .home-quick-links-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: var(--space-2);
+}
+#app:has(> .home-operational) .home-quick-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: auto;
+  height: auto;
+  min-height: 72px;
+  padding: var(--space-3) var(--space-2);
+  border: 1px solid var(--line);
+  flex: initial;
+}
+#app:has(> .home-operational) .home-quick-link:hover {
+  border-color: var(--line-strong);
+}
+.home-quick-link img,
+.home-quick-link-fallback {
+  width: 26px;
+  height: 26px;
+  flex: none;
+  object-fit: contain;
+}
+.home-quick-link-label {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--text-meta);
+  line-height: 1.3;
+  color: var(--muted);
+}
+
+/* Score cards: editable list behind the Quick Add grid. */
+.score-cards-foot {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-2);
+}
+.score-cards-hint {
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-meta);
+  line-height: 1.5;
+  color: var(--muted);
+}
+.score-editor-list {
+  display: grid;
+  gap: var(--space-3);
+}
+.score-editor-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr) auto;
+  align-items: end;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--panel-2);
+}
+.score-editor-row label {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  font-size: var(--text-meta);
+  color: var(--muted);
+}
+.score-editor-row input {
+  width: 100%;
+  min-width: 0;
+}
+.score-editor-actions {
+  display: flex;
+  gap: 6px;
+}
+.score-editor-actions .icon-btn {
+  min-width: var(--control-h);
+}
+.score-editor-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+.score-cards-empty {
+  margin: 0;
+  font-size: var(--text-small);
+  color: var(--muted);
+}
+@media (max-width: 780px) {
+  .score-editor-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .score-editor-actions {
+    justify-content: flex-end;
+  }
+}
+
+/* Phone: the Customize Home entry lives in the top bar, left of "+ 新增"; greeting sits above the world clocks. */
+@media (max-width: 780px) {
+  .topbar {
+    grid-template-columns: minmax(0, 1fr) auto repeat(4, 44px);
+  }
+  .topbar .home-layout-toggle-top {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    width: auto;
+    min-width: 44px;
+    height: 44px;
+    min-height: 44px;
+    padding: 0 8px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    color: var(--text);
+  }
+  .topbar .home-layout-toggle-top .home-layout-top-label {
+    margin-left: 4px;
+  }
+  .topbar #addBtn {
+    grid-column: 3;
+  }
+  .topbar #notificationBell {
+    grid-column: 4;
+  }
+  .topbar .topbar-actions .global-search-mobile {
+    grid-column: 5;
+  }
+  .topbar #accountBtn {
+    grid-column: 6;
+  }
+  #app .page-head:has(> .head-clock-panel) > div:first-child {
+    order: 1;
+  }
+  #app .page-head:has(> .head-clock-panel) > .head-clock-panel {
+    order: 2;
+  }
+}
+
+/* Very narrow phones: the Customize Home entry keeps only its icon so it never crowds the logo. */
+@media (max-width: 360px) {
+  .topbar .home-layout-toggle-top {
+    width: 44px;
+    padding: 0;
+    font-size: 20px;
+  }
+  .topbar .home-layout-toggle-top .home-layout-top-label {
+    display: none;
+  }
+}

@@ -1,0 +1,9 @@
+/* v0.9.8.22 — Safari-safe native Prompt card activation layer. */
+.prompt-card{isolation:isolate}
+.prompt-card-hit{position:absolute;inset:0;z-index:1;width:100%;height:100%;margin:0;padding:0;border:0;border-radius:inherit;background:transparent;color:inherit;cursor:pointer}
+.prompt-card .prompt-cover{position:relative;z-index:0;pointer-events:none}
+.prompt-card .prompt-card-body{position:relative;z-index:2;pointer-events:none}
+.prompt-card .card-inline-actions{position:relative;pointer-events:auto}
+.prompt-card-hit:focus-visible{outline:2px solid var(--accent);outline-offset:-3px}
+@media (hover:hover) and (pointer:fine){.prompt-card:hover{transform:translateY(-2px);border-color:var(--line-strong);box-shadow:var(--shadow-sm)}}
+@media (prefers-reduced-motion:reduce){.prompt-card{transition:none}}

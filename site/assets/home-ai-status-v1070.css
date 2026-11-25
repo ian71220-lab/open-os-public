@@ -1,0 +1,32 @@
+/* Home AI workflow status card (read-only). Uses existing tokens; stacks rows on phones. */
+.home-ai-status { margin-bottom: var(--space-5); display: grid; gap: var(--space-3); }
+.home-ai-status .ai-status-badge { font-size: var(--text-micro); color: var(--muted); border: 1px solid var(--line); border-radius: var(--radius-pill); padding: 2px 10px; align-self: start; white-space: nowrap; }
+.home-ai-status .ai-status-summary { margin: 0; color: var(--muted); font-size: var(--text-small); }
+.home-ai-status .ai-status-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+.home-ai-status .ai-status-row { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: start; gap: var(--space-3); padding: var(--space-3) 0; border-top: 1px solid var(--line); }
+.home-ai-status .ai-status-icon { width: 32px; height: 32px; display: inline-grid; place-items: center; border-radius: var(--radius-sm); background: var(--panel-2); }
+.home-ai-status .ai-status-copy { min-width: 0; display: grid; gap: 2px; }
+.home-ai-status .ai-status-copy b { overflow-wrap: anywhere; }
+.home-ai-status .ai-status-copy span { color: var(--muted); font-size: var(--text-label); }
+.home-ai-status .ai-status-copy small { color: var(--muted); font-size: var(--text-label); overflow-wrap: anywhere; }
+.home-ai-status .ai-status-pill { font-size: var(--text-micro); border-radius: var(--radius-pill); padding: 2px 8px; color: var(--success); border: 1px solid currentColor; white-space: nowrap; }
+.home-ai-status .ai-status-more,
+.home-ai-status .ai-status-empty { margin: 0; color: var(--muted); font-size: var(--text-small); }
+.home-ai-status .ai-status-footer { display: flex; justify-content: flex-end; }
+@media (max-width: 600px) {
+  .home-ai-status .ai-status-row { grid-template-columns: auto minmax(0, 1fr); }
+  .home-ai-status .ai-status-pill { grid-column: 2; justify-self: start; }
+}
+.home-ai-status .overview-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-3); }
+.home-ai-status .overview-heading > .ai-status-badge { display: inline-flex; width: auto; margin-left: auto; align-self: flex-start; }
+.home-ai-status .overview-heading { flex-wrap: nowrap; }
+.home-ai-status .overview-heading > div:first-child { min-width: 0; flex: 1 1 auto; }
+.home-ai-status .overview-heading { flex-direction: row; }
+/* Spacing pass: clear space above the card (it sat directly under the calendar panel), tighter internal rhythm. */
+.home-ai-status { margin-top: var(--space-4); margin-bottom: var(--space-5); gap: var(--space-2); }
+.home-ai-status .overview-heading { margin-bottom: 0; }
+.home-ai-status .ai-status-summary { margin-top: var(--space-1); }
+.home-ai-status .ai-status-list { gap: 0; }
+.home-ai-status .ai-status-row { padding: var(--space-3) 0; }
+.home-ai-status .ai-status-row:first-child { border-top: 0; padding-top: var(--space-2); }
+#app .home-ai-status .overview-heading { margin-bottom: 0; }

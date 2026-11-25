@@ -1,0 +1,52 @@
+.danger-btn{
+  min-height:42px;
+  padding:0 var(--space-4);
+  border:1px solid var(--danger);
+  border-radius:var(--radius-md);
+  background:var(--danger);
+  color:var(--panel);
+  font:inherit;
+  font-weight:600;
+  cursor:pointer;
+}
+.danger-btn.secondary-danger{
+  background:transparent;
+  color:var(--danger);
+}
+.danger-btn.compact{min-height:36px;padding:0 var(--space-3);font-size:var(--text-small)}
+.danger-btn:disabled{opacity:.58;cursor:wait}
+.delete-confirm-backdrop{z-index:120}
+.delete-confirm{width:min(480px,100%);overflow:visible}
+.delete-confirm-mark{
+  display:grid;
+  place-items:center;
+  width:42px;
+  height:42px;
+  margin-bottom:var(--space-4);
+  border-radius:var(--radius-md);
+  background:color-mix(in srgb,var(--danger) 12%,var(--panel));
+  color:var(--danger);
+  font-weight:600;
+}
+.delete-confirm h2{margin-top:var(--space-1)}
+.delete-confirm>p{margin:var(--space-4) 0 0;color:var(--muted);line-height:var(--leading-copy)}
+.delete-confirm .modal-actions{margin-top:var(--space-5)}
+.delete-confirm-error{
+  padding:var(--space-3);
+  border:1px solid color-mix(in srgb,var(--danger) 45%,var(--line));
+  border-radius:var(--radius-md);
+  background:color-mix(in srgb,var(--danger) 8%,var(--panel));
+  color:var(--danger);
+}
+.detail-actions .danger-btn,.modal-actions .danger-btn{flex:0 0 auto}
+@media (hover:hover) and (pointer:fine){
+  .danger-btn:hover{background:color-mix(in srgb,var(--danger) 88%,var(--text));border-color:color-mix(in srgb,var(--danger) 88%,var(--text))}
+  .danger-btn.secondary-danger:hover{background:color-mix(in srgb,var(--danger) 9%,var(--panel));color:var(--danger)}
+}
+.danger-btn:active{transform:translateY(1px)}
+@media (prefers-reduced-motion:reduce){.danger-btn{transition:none}}
+@media (max-width:540px){
+  .delete-confirm-backdrop{align-items:end;padding:var(--space-3)}
+  .delete-confirm{width:100%}
+  .delete-confirm .modal-actions{display:grid;grid-template-columns:1fr 1fr}
+}

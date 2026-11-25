@@ -1,0 +1,36 @@
+/* v0.9.8.4: focused Home, Notes and list-action consistency. */
+.home-layout-status{margin-right:auto;color:var(--muted);font-size:var(--text-small);font-weight:600}
+.home-layout-save,.home-layout-cancel,.home-layout-reset{white-space:nowrap}
+
+/* Notes are structured records, not narrow editorial articles. */
+#app .detail-panel.editorial-detail.note-reading .detail-content{
+  inline-size:100%;max-inline-size:none;min-inline-size:0;
+  line-height:var(--leading-body);
+}
+#app .note-reading .detail-content :is(p,ul,ol,blockquote,pre,.rich-table-scroll){max-inline-size:none}
+#app .note-reading .detail-content p{margin-block:0 var(--space-2)}
+#app .note-reading .detail-content :is(ul,ol){margin-block:var(--space-2) var(--space-3)}
+#app .note-reading .detail-content li+li{margin-top:var(--space-1)}
+
+.card-inline-actions{display:flex;align-items:center;gap:var(--space-1)}
+.card-list-delete,.row-delete{color:var(--muted);white-space:nowrap}
+.project-open{align-items:center;gap:var(--space-3)}
+.project-open>span{min-width:0}
+.task-item:has(.row-delete),.agenda-item:has(.row-delete),.comm-item:has(.row-delete){
+  grid-template-columns:auto minmax(0,1fr) auto auto;
+}
+.row-delete{min-width:var(--control-h);min-height:var(--control-h)}
+
+/* Keep the Daily Brief dominant while making its support column denser and aligned. */
+#app:has(>.home-operational) .dashboard-col+.dashboard-col{gap:var(--space-4)}
+#app:has(>.home-operational) .dashboard-col+.dashboard-col>.panel{padding:var(--space-5)}
+#app:has(>.home-operational) .dashboard-col+.dashboard-col .section-head{margin-bottom:var(--space-3)}
+
+@media(max-width:780px){
+  .home-layout-status{flex:1 0 100%}
+  .task-item:has(.row-delete),.agenda-item:has(.row-delete),.comm-item:has(.row-delete){
+    grid-template-columns:auto minmax(0,1fr) auto;
+  }
+  .task-item>.row-delete,.agenda-item>.row-delete,.comm-item>.row-delete{grid-column:2/-1;justify-self:end}
+}
+

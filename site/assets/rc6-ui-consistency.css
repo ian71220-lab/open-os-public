@@ -1,0 +1,29 @@
+/* RC6: scoped spacing and dividers for the existing credit-card layouts. */
+#app:has(>.utility-credit) .credit-card-preview .card-finance-grid{
+  gap:var(--space-2);margin-bottom:var(--space-4);
+}
+#app:has(>.utility-credit) .credit-card-preview .card-finance-grid>div{
+  padding:var(--space-3);border:1px solid var(--line);
+  border-radius:var(--radius-md);background:var(--panel-2);
+}
+#app:has(>.utility-credit) .credit-card-preview .card-finance-grid b{
+  margin-top:var(--space-1);font-size:var(--text-body-lg);
+}
+/* The benefits border is the sole divider beneath the four facts. */
+#app:has(>.utility-credit) .credit-card-preview .credit-benefit-summary{
+  padding-top:var(--space-4);border-top:1px solid var(--line);
+}
+.credit-card-detail .card-finance-grid{
+  gap:var(--space-2);padding:0;background:transparent;border:0;
+}
+.credit-card-detail .card-finance-grid>div,
+.credit-card-detail .card-finance-grid>div:nth-last-child(-n+2){
+  padding:var(--space-3);border:1px solid var(--line);
+  border-radius:var(--radius-md);background:var(--panel-2);
+}
+.credit-card-detail .modal-header .icon-btn{
+  align-self:flex-start;display:inline-grid;place-items:center;
+  min-width:44px;min-height:44px;margin:0;
+  border:1px solid var(--line);border-radius:var(--radius-md);
+  background:var(--panel);color:var(--text);
+}

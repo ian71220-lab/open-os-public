@@ -1,0 +1,72 @@
+/* v1.0.4.4 — focused planner refinements; shared OPEN OS tokens remain authoritative. */
+#app:has(>.calendar-operational),
+#app:has(>.tasks-operational){font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",sans-serif}
+
+#app:has(>.calendar-operational) .calendar-main,
+#app:has(>.calendar-operational) .calendar-details>.panel{min-width:0}
+#app:has(>.calendar-operational) .calendar-main{border-color:var(--line-strong)}
+#app:has(>.calendar-operational) .calendar-month-heading{min-width:0}
+#app:has(>.calendar-operational) .calendar-month-heading h3{font-size:var(--text-section-title);font-variant-numeric:tabular-nums}
+#app:has(>.calendar-operational) .calendar-nav{align-items:center;gap:var(--space-2)}
+#app:has(>.calendar-operational) .calendar-nav .mini-btn{display:inline-grid;place-items:center;min-width:44px;min-height:44px;width:44px;height:44px;font-size:var(--text-card-title);color:var(--text)}
+#app:has(>.calendar-operational) .calendar-nav .calendar-today-btn{width:auto;min-width:68px;padding-inline:var(--space-3);font-size:var(--text-label);font-weight:600}
+#app:has(>.calendar-operational) .cal-day{transition:background-color var(--duration-ui) ease,border-color var(--duration-ui) ease,box-shadow var(--duration-ui) ease}
+#app:has(>.calendar-operational) .cal-day:focus-visible{outline:2px solid var(--focus-color);outline-offset:2px;z-index:1}
+#app:has(>.calendar-operational) .cal-day.today .cal-num{display:grid;place-items:center;width:26px;height:26px;margin:-3px 0 0 -3px;border-radius:var(--radius-pill);background:var(--accent);color:var(--accent-text,var(--color-gallery-white))}
+#app:has(>.calendar-operational) .cal-day.selected:not(.today){border-color:var(--link-color);box-shadow:inset 0 0 0 1px var(--link-color)}
+#app:has(>.calendar-operational) .cal-day.selected.today .cal-num{background:var(--accent);color:var(--accent-text,var(--color-gallery-white))}
+#app:has(>.calendar-operational) .calendar-grid .cal-day.out{color:var(--muted)}
+#app:has(>.calendar-operational) .calendar-weekdays div{padding-block:var(--space-2);font-weight:600}
+#app:has(>.calendar-operational) .selected-day-panel{border-top:3px solid var(--brand)}
+#app:has(>.calendar-operational) .selected-day-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--space-3)}
+#app:has(>.calendar-operational) .selected-day-heading .eyebrow{color:var(--brand)}
+#app:has(>.calendar-operational) .selected-day-count{flex:0 0 auto;padding:var(--space-2) var(--space-3);border:1px solid var(--line);border-radius:var(--radius-pill);background:var(--panel);color:var(--muted);font-size:var(--text-meta);font-weight:600;line-height:1.2;text-align:center}
+#app:has(>.calendar-operational) .selected-day-hint{margin:var(--space-2) 0 0;color:var(--muted);font-size:var(--text-meta);line-height:var(--leading-body)}
+#app:has(>.calendar-operational) .calendar-week-panel .task-item{min-height:54px}
+#app:has(>.calendar-operational) .calendar-week-panel .task-item .row-delete{display:none}
+#app:has(>.calendar-operational) .calendar-agenda-day.selected .calendar-agenda-date{color:var(--link-color)}
+#app:has(>.calendar-operational) .calendar-agenda-day.today .calendar-agenda-date time{font-weight:700}
+#app:has(>.calendar-operational) .calendar-agenda-date time{font:inherit}
+#app:has(>.calendar-operational) .calendar-agenda-day.selected .calendar-agenda-date b{background:var(--accent-soft);color:var(--link-color)}
+
+#app:has(>.tasks-operational) .task-planner-filters{gap:var(--space-2);margin-block:var(--space-3) var(--space-5)}
+#app:has(>.tasks-operational) .task-planner-filters .filter-chip{min-height:40px}
+#app:has(>.tasks-operational) .task-planner-filters .filter-chip.active{border-color:var(--brand);background:var(--accent-soft);color:var(--link-color)}
+#app:has(>.tasks-operational) .task-item{transition:opacity 180ms ease,border-color 180ms ease,background-color 180ms ease}
+#app:has(>.tasks-operational) .task-item[data-due-state="overdue"] .task-due{color:var(--danger);font-weight:700}
+#app:has(>.tasks-operational) .task-item[data-due-state="today"] .task-due{color:var(--brand);font-weight:700}
+#app:has(>.tasks-operational) .task-item .task-check{width:22px;height:22px;min-width:22px;border-radius:var(--radius-pill)}
+
+@media(max-width:1200px){
+  #app:has(>.calendar-operational) .month-page-grid{grid-template-columns:minmax(0,1fr)}
+  #app:has(>.calendar-operational) .day-side{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:780px){
+  #app:has(>.calendar-operational) .calendar-toolbar{align-items:center}
+  #app:has(>.calendar-operational) .calendar-nav{gap:var(--space-1)}
+  #app:has(>.calendar-operational) .calendar-nav .mini-btn{min-width:44px;min-height:44px;width:44px;height:44px}
+  #app:has(>.calendar-operational) .calendar-nav .calendar-today-btn{min-width:68px;width:auto;padding-inline:var(--space-2)}
+  #app:has(>.calendar-operational) .calendar-mobile-agenda-page{padding-block-end:var(--space-3)}
+  #app:has(>.calendar-operational) .calendar-agenda-day{padding:var(--space-2);border:1px solid transparent;border-radius:var(--radius-md)}
+  #app:has(>.calendar-operational) .calendar-agenda-day.today{background:color-mix(in srgb,var(--brand) 5%,var(--panel))}
+  #app:has(>.calendar-operational) .calendar-agenda-day.selected{border-color:var(--link-color)}
+  #app:has(>.calendar-operational) .calendar-agenda-date{min-height:38px}
+  #app:has(>.calendar-operational) .calendar-agenda-event{min-height:52px}
+  #app:has(>.calendar-operational) .calendar-agenda-event time{font-variant-numeric:tabular-nums}
+  #app:has(>.tasks-operational) .task-planner-filters{flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-inline:contain;padding-block:2px 6px;scrollbar-width:thin}
+  #app:has(>.tasks-operational) .task-planner-filters .filter-chip{flex:0 0 auto;min-height:44px}
+  #app:has(>.tasks-operational) .task-item{grid-template-columns:auto minmax(0,1fr) auto;gap:var(--space-2);padding:var(--space-3)}
+  #app:has(>.tasks-operational) .task-item .priority{grid-column:2;justify-self:start}
+  #app:has(>.tasks-operational) .task-item .row-delete{grid-column:3;grid-row:1 / span 2}
+}
+@media(max-width:420px){
+  #app:has(>.calendar-operational) .calendar-month-heading h3{font-size:var(--text-card-title)}
+  #app:has(>.calendar-operational) .calendar-nav{gap:2px}
+  #app:has(>.calendar-operational) .calendar-nav .mini-btn{min-width:40px;width:40px}
+  #app:has(>.calendar-operational) .calendar-nav .calendar-today-btn{min-width:60px}
+  #app:has(>.calendar-operational) .selected-day-heading{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+  #app:has(>.calendar-operational) .cal-day,
+  #app:has(>.tasks-operational) .task-item{transition:none}
+}

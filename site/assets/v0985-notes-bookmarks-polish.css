@@ -1,0 +1,66 @@
+/* v0.9.8.5: scoped Notes and Bookmarks presentation polish. */
+
+/* Note cards keep their existing structure while limiting the body preview to two lines. */
+#app .note-card>p{
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  line-clamp:2;
+  overflow:hidden;
+}
+
+/* Bookmark row actions remain one stable control group at every table width. */
+#app:has(>.utility-bookmarks) .bookmark-table td:last-child{
+  white-space:nowrap;
+}
+#app:has(>.utility-bookmarks) .bookmark-table-wrap{
+  overflow-x:hidden;
+}
+#app:has(>.utility-bookmarks) .bookmark-table{
+  width:100%;
+  min-width:0;
+  table-layout:fixed;
+}
+#app:has(>.utility-bookmarks) .bookmark-table th:nth-child(4){
+  width:clamp(210px,22vw,260px);
+}
+#app:has(>.utility-bookmarks) .bookmark-table td:nth-child(3){
+  min-width:0;
+  max-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+#app:has(>.utility-bookmarks) .bookmark-table td:nth-child(3)>a{
+  display:block;
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+#app:has(>.utility-bookmarks) .bookmark-actions{
+  display:flex;
+  flex-wrap:nowrap;
+  align-items:center;
+  justify-content:flex-end;
+  gap:var(--space-2);
+  white-space:nowrap;
+}
+#app:has(>.utility-bookmarks) .bookmark-actions :is(a,button){
+  display:inline-flex;
+  flex:0 0 auto;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+  white-space:nowrap;
+}
+
+@media(max-width:600px){
+  #app:has(>.utility-bookmarks) .bookmark-table th:nth-child(4){width:38%}
+  #app:has(>.utility-bookmarks) .bookmark-actions{
+    flex-wrap:wrap;
+    justify-content:flex-start;
+    gap:var(--space-1);
+    white-space:normal;
+  }
+}

@@ -1,0 +1,7 @@
+/* v1.0.4.38: 常用 (pinned sidebar entries) and the pin toggle inside the sidebar order editor. */
+.nav-pinned{display:grid;gap:4px}
+.nav-pinned[hidden]{display:none}
+.nav-pinned-items{display:grid;gap:4px}
+.nav-pinned .nav-item.active{font-weight:600}
+.sidebar-order-row .pin-toggle{min-width:34px;padding-left:8px;padding-right:8px;font-size:var(--text-body-sm,14px);line-height:1}
+.sidebar-order-row .pin-toggle[aria-pressed="true"]{color:var(--accent);border-color:var(--accent)}

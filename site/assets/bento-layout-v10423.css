@@ -1,0 +1,125 @@
+/* Optional visual layer for the existing pages. No content or navigation changes. */
+:root{
+  --bento-coffee:#563629;
+  --bento-caramel:#80511f;
+  --bento-cream:#fbf3e9;
+  --bento-peach:#f8eee5;
+  --bento-sage:#eef3e9;
+  --bento-blue:#edf2f9;
+  --bento-gold:#f7f0df;
+  --bento-gap:var(--space-5,24px);
+}
+:root[data-theme="dark"]{
+  --bento-coffee:#382a25;
+  --bento-caramel:#eed0a3;
+  --bento-cream:#302b2a;
+  --bento-peach:#332b29;
+  --bento-sage:#2b302b;
+  --bento-blue:#292f35;
+  --bento-gold:#343027;
+}
+/* Keep the page header compact without a colored tile. */
+#app > .page-head{gap:var(--bento-gap);align-items:stretch}
+#app .page-head > div:first-child{
+  min-width:0;max-width:min(100%,540px);
+  padding:clamp(22px,3vw,36px);
+  border-radius:15px;
+  background:transparent;
+  color:var(--text);
+}
+#app .page-head > div:first-child :is(.eyebrow,.page-subtitle){color:var(--muted)}
+#app > .page-head > :is(.section-actions,.restaurant-head-actions){align-self:end}
+/* Existing sections form the cells. Restrict the palette to application content. */
+#app :is(.panel,.item-card,.project-card,.overview-card,.home-widget,.bookmark-table-wrap){
+  border-radius:15px;
+  min-width:0;
+}
+#app :is(.dashboard-grid,.card-grid,.project-grid,.overview-grid,.automation-grid,.restaurant-grid,.month-page-grid){gap:var(--bento-gap)}
+#app .panel{background:var(--bento-cream)}
+#app .panel:nth-child(4n+2){background:var(--bento-peach)}
+#app .panel:nth-child(4n+3){background:var(--bento-sage)}
+#app .panel:nth-child(4n){background:var(--bento-blue)}
+#app :is(.item-card,.project-card,.overview-card){background:var(--bento-cream)}
+#app :is(.item-card,.project-card,.overview-card):nth-child(4n+2){background:var(--bento-peach)}
+#app :is(.item-card,.project-card,.overview-card):nth-child(4n+3){background:var(--bento-sage)}
+#app :is(.item-card,.project-card,.overview-card):nth-child(4n){background:var(--bento-gold)}
+/* Restaurant cards use one consistent surface; cuisine is identified by its label. */
+#app .restaurant-grid .restaurant-card,
+#app .restaurant-grid .restaurant-card:nth-child(n){background:var(--panel)}
+#app .restaurant-card-top .restaurant-cuisine-tag{
+  flex:0 1 auto;display:inline-block;max-width:45%;padding:6px 11px;
+  border:1px solid var(--line-strong);border-radius:var(--radius-pill);
+  background:var(--panel-2);color:var(--text);font-weight:600;
+  line-height:1.3;text-align:center;
+}
+.restaurant-city-list{display:grid;gap:10px;max-height:min(55vh,480px);overflow:auto}
+.restaurant-city-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(170px,1.5fr);align-items:center;gap:12px}
+.restaurant-city-row input{width:100%;min-width:0}
+/* Preserve the full cuisine value in the existing span and on its filter. */
+#app .restaurant-card-top{min-width:0}
+#app .restaurant-card-top h2{min-width:0;flex:1}
+#app .restaurant-card-top span{
+  display:block;flex:0 1 auto;max-width:42%;min-width:0;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  overflow-wrap:normal;word-break:normal;
+}
+/* Collection cards use equal columns; other dashboard cells can still vary. */
+@media(min-width:1280px){
+  #app :is(.restaurant-grid,.card-grid,.project-grid){grid-template-columns:repeat(3,minmax(0,1fr))}
+  #app :is(.restaurant-grid,.card-grid,.project-grid) > *{grid-column:auto}
+}
+/* The coffee title stays readable on the light tile from the supplied reference. */
+@supports ((background-clip:text) or (-webkit-background-clip:text)){
+  #app :is(.page-title,.section-head > h2,.video-row-head h2,.brief-title,.restaurant-card h2,.project-card h2,.asset-summary-grid .panel:nth-child(2) strong,.asset-card dl > div:nth-child(3) dd,.travel-metrics strong){
+    background-image:linear-gradient(105deg,var(--bento-coffee) 12%,var(--bento-caramel) 48%,var(--bento-coffee) 85%);
+    background-size:220% 100%;background-clip:text;-webkit-background-clip:text;
+    color:transparent;-webkit-text-fill-color:transparent;
+    animation:bento-ink-flow 12s ease-in-out infinite alternate;
+  }
+  :root[data-theme="dark"] #app :is(.page-title,.section-head > h2,.video-row-head h2,.brief-title,.restaurant-card h2,.project-card h2,.asset-summary-grid .panel:nth-child(2) strong,.asset-card dl > div:nth-child(3) dd,.travel-metrics strong){
+    background-image:linear-gradient(105deg,#f9e4c8 12%,#e8b879 48%,#f9e4c8 85%);
+  }
+}
+@keyframes bento-ink-flow{from{background-position:0% 50%}to{background-position:100% 50%}}
+/* overflow:clip does not establish the scrolling ancestor that prevents sticky. */
+.main-wrap{overflow:clip}
+.topbar{
+  position:sticky;top:0;
+  transition:height 220ms ease,background-color 220ms ease,box-shadow 220ms ease;
+}
+.topbar.is-scrolled{
+  height:calc(66px + var(--safe-top));
+  background:color-mix(in srgb,var(--color-gallery-white) 84%,transparent);
+  -webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);
+  box-shadow:0 8px 24px color-mix(in srgb,var(--text) 10%,transparent);
+}
+:root[data-theme="dark"] .topbar.is-scrolled{background:color-mix(in srgb,var(--panel) 88%,transparent)}
+/* The desktop mark lives in the sidebar; the mobile mark lives in the topbar. */
+.topbar .brand-asset-symbol{transition:width 220ms ease,height 220ms ease}
+.topbar.is-scrolled .brand-asset-symbol{width:23px;height:23px}
+.sidebar .brand-asset-compact{transition:width 220ms ease,height 220ms ease}
+:root.bento-scrolled .sidebar .brand-asset-compact{width:52px;height:41px}
+/* Only JS-selected, visible-screen content gets the reveal state. */
+#app .bento-reveal-pending{
+  opacity:0;transform:translateY(14px);
+  transition:opacity 520ms ease,transform 520ms cubic-bezier(.22,.7,.3,1);
+  transition-delay:var(--bento-reveal-delay,0ms);
+}
+#app .bento-reveal-pending.bento-reveal-visible{opacity:1;transform:translateY(0)}
+@media(max-width:780px){
+  .topbar.is-scrolled{height:calc(64px + var(--safe-top));padding-bottom:var(--space-2,8px)}
+  #app > .page-head{flex-direction:column}
+  #app .page-head > div:first-child{width:100%}
+  #app > .page-head > :is(.section-actions,.restaurant-head-actions){align-self:stretch}
+  #app :is(.dashboard-grid,.card-grid,.project-grid,.overview-grid,.automation-grid,.restaurant-grid,.month-page-grid){gap:var(--space-4,16px)}
+}
+@media(max-width:600px){
+  .restaurant-city-row{grid-template-columns:minmax(0,1fr)}
+  #app .page-head > div:first-child{padding:var(--space-5,24px)}
+  #app .restaurant-card-top span{max-width:42%}
+}
+@media(prefers-reduced-motion:reduce){
+  #app :is(.page-title,.section-head > h2,.video-row-head h2,.brief-title,.restaurant-card h2,.project-card h2,.asset-summary-grid .panel:nth-child(2) strong,.asset-card dl > div:nth-child(3) dd,.travel-metrics strong){animation:none}
+  #app .bento-reveal-pending{opacity:1;transform:none;transition:none}
+  .topbar,.topbar .brand-asset-symbol,.sidebar .brand-asset-compact{transition:none}
+}

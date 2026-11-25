@@ -1,0 +1,113 @@
+/* v0.9.8.8 — focused UI consistency: scrollbars, dialogs, Notes and Home. */
+
+:root{
+  --preview-dialog-height:75dvh;
+}
+
+/* Retain touch momentum for the original targeted scroll areas. */
+:is(#app:has(>.travel-back) .travel-day-tabs,.credit-card-detail,.credit-card-detail .rich-table-scroll,.prompt-gallery){-webkit-overflow-scrolling:touch}
+
+/* One restrained scrollbar treatment for page and component scroll areas. */
+html,
+body,
+*{
+  scrollbar-width:thin;
+  scrollbar-color:var(--line-strong) var(--panel-2);
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar{
+  width:var(--space-2);
+  height:var(--space-2);
+}
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+*::-webkit-scrollbar-track{
+  background:var(--panel-2);
+  border-radius:var(--radius-pill);
+}
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb{
+  min-width:var(--space-6);
+  min-height:var(--space-6);
+  border:thin solid var(--panel-2);
+  border-radius:var(--radius-pill);
+  background:var(--line-strong);
+}
+@media(hover:hover) and (pointer:fine){
+  html::-webkit-scrollbar-thumb:hover,
+  body::-webkit-scrollbar-thumb:hover,
+  *::-webkit-scrollbar-thumb:hover{background:var(--muted)}
+}
+
+/* All modal close icons share the Credit Card control treatment. */
+.modal-backdrop :is(.modal-header>.icon-btn,.prompt-close){
+  position:sticky;
+  top:var(--space-3);
+  right:var(--space-3);
+  z-index:9;
+  display:grid;
+  flex:0 0 var(--control-h);
+  place-items:center;
+  width:var(--control-h);
+  height:var(--control-h);
+  min-width:var(--control-h);
+  min-height:var(--control-h);
+  margin:0;
+  padding:0;
+  border:1px solid var(--line);
+  border-radius:var(--radius-md);
+  background:var(--panel);
+  color:var(--text);
+  font:600 var(--text-body)/1 var(--font-ui);
+  box-shadow:none;
+}
+.modal-backdrop>.prompt-modal>.prompt-close,
+.modal-backdrop>.video-modal>.prompt-close,
+.modal-backdrop>.image-viewer>.prompt-close{
+  float:right;
+  margin:var(--space-3);
+}
+
+/* The full preview dialogs now share the same desktop viewport height. */
+.modal-backdrop> :is(.prompt-modal,.video-modal,.image-viewer,.credit-card-detail),
+.modal-backdrop>.vendor-modal:has(.vendor-facts){
+  height:var(--preview-dialog-height);
+  max-height:var(--preview-dialog-height);
+  overflow:auto;
+  box-sizing:border-box;
+}
+.image-viewer-stage{min-height:0;height:auto}
+.image-viewer-stage img{max-height:calc(var(--preview-dialog-height) - var(--space-8))}
+
+/* Halve only the space between Quick Filters and Quick Links. */
+.home-layout-module:has(>.home-tags)+.home-layout-module:has(>.home-quick-links){
+  margin-top:calc(var(--space-2) * -1);
+}
+
+/* Score shortcuts reuse the existing Quick Add cards without capture behavior. */
+.quick-score-card{
+  display:block;
+  color:var(--text);
+  text-decoration:none;
+}
+.quick-score-card .quick-score-icon{
+  display:grid;
+  flex:0 0 var(--space-6);
+  place-items:center;
+  width:var(--space-6);
+  height:var(--space-6);
+  margin:0;
+  border-radius:var(--radius-sm);
+  background:var(--panel-2);
+  font-size:var(--text-body);
+  line-height:1;
+}
+
+@media(max-width:780px){
+  :root{--preview-dialog-height:calc(100dvh - max(var(--space-5),env(safe-area-inset-top)) - max(var(--space-5),env(safe-area-inset-bottom)))}
+  .modal-backdrop> :is(.prompt-modal,.video-modal,.image-viewer,.credit-card-detail),
+  .modal-backdrop>.vendor-modal:has(.vendor-facts){height:var(--preview-dialog-height);max-height:var(--preview-dialog-height)}
+  .home-layout-module:has(>.home-tags)+.home-layout-module:has(>.home-quick-links){margin-top:calc(var(--space-1) * -1)}
+}

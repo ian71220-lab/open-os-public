@@ -1,0 +1,9 @@
+/* v1.0.4.41: home card icon hover uses a soft tint (the solid accent block read as a glitch), plus the press ripple. */
+@media (hover:hover) and (pointer:fine){
+  #app:has(> .home-operational) .overview-card:hover .overview-icon.overview-icon{background:var(--accent-soft);color:var(--link-color)}
+}
+#app:has(> .home-operational) .overview-card{position:relative;overflow:hidden;isolation:isolate}
+#app:has(> .home-operational) .overview-card>:not(.ripple-wave){position:relative;z-index:1}
+.ripple-wave{position:absolute;z-index:0;border-radius:50%;background:color-mix(in srgb,var(--accent) 16%,transparent);transform:translate(-50%,-50%) scale(0);opacity:1;pointer-events:none;animation:ripple-expand 560ms cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes ripple-expand{to{transform:translate(-50%,-50%) scale(1);opacity:0}}
+@media (prefers-reduced-motion:reduce){.ripple-wave{display:none}}

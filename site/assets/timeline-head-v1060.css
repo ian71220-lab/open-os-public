@@ -1,0 +1,7 @@
+/* Project daily-log header. The title takes the free width of the row and wraps only once it is full.
+   Actions drop to a right-aligned row below only when there is no room beside the title. */
+.timeline-card .timeline-head { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 12px 16px; }
+.timeline-card .timeline-head > div:first-child { flex: 1 1 220px; min-width: 0; }
+.timeline-card .timeline-head .type-pill { display: inline-flex; width: auto; max-width: 100%; white-space: nowrap; }
+.timeline-card .timeline-head h3 { margin: 8px 0 0; min-width: 0; overflow-wrap: anywhere; }
+.timeline-card .timeline-head .detail-actions { flex: 0 0 auto; width: auto; margin-left: auto; }

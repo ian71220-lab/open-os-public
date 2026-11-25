@@ -1,0 +1,4 @@
+/* Phone header: the search icon matches the notification bell (transparent, no border), not the boxed default button. */
+@media (max-width: 780px) {
+  .topbar .topbar-actions .global-search-mobile { border: 0; background: transparent; border-radius: 9px; }
+}

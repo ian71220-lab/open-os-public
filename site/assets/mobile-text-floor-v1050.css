@@ -1,0 +1,14 @@
+/* Mobile text floor: secondary text never drops below 12px on phones and tablets.
+   Login card keeps its layout, only font sizes change. */
+@media (max-width: 780px) {
+  .auth-card .eyebrow,
+  .auth-card label > span,
+  .auth-card > small { font-size: var(--text-label); }
+}
+@media (max-width: 600px) {
+  #app .note-list-date { font-size: var(--text-label); }
+  #app .asset-category small,
+  #app .asset-summary-grid small,
+  #app .asset-card dt,
+  #app .asset-card .status-pill { font-size: var(--text-label); }
+}

@@ -1,0 +1,26 @@
+/* v0.9.8.24 — semantic credit-card reminders and Home travel countdown. */
+.cal-event.credit-closing,
+.cal-event.credit-payment{min-width:0;border-inline-start:3px solid;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
+.cal-event.credit-closing{border-inline-start-color:var(--muted);background:color-mix(in srgb,var(--muted) 9%,var(--panel-2));color:var(--text)}
+.cal-event.credit-payment{border-inline-start-color:var(--brand);background:color-mix(in srgb,var(--brand) 13%,var(--panel-2));color:var(--text);font-weight:600}
+.calendar-reference-row.credit-closing>span{background:color-mix(in srgb,var(--muted) 10%,var(--panel-2));color:var(--muted)}
+.calendar-reference-row.credit-payment>span{background:color-mix(in srgb,var(--brand) 14%,var(--panel-2));color:var(--brand);font-weight:600}
+.calendar-reference-row.credit-payment{border-inline-start:3px solid var(--brand);padding-inline-start:var(--space-2)}
+.calendar-reference-label{display:inline-block;margin-inline-end:var(--space-1);color:var(--muted);font-size:var(--text-meta);font-style:normal;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.calendar-reference-row.credit-payment .calendar-reference-label{color:var(--brand)}
+.home-travel-strip{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr) auto auto auto;align-items:center;gap:var(--space-4);min-width:0;min-height:calc(var(--control-h) + var(--space-5));margin-block-start:var(--space-4);padding:var(--space-3) var(--space-4);border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--panel);color:var(--text)}
+.home-travel-identity{display:flex;align-items:center;gap:var(--space-3);min-width:0}
+.home-travel-mark{display:grid;place-items:center;flex:0 0 auto;width:var(--control-h);height:var(--control-h);border-radius:var(--radius-md);background:var(--panel-2);color:var(--brand);font-size:var(--text-card-title)}
+.home-travel-identity>span:last-child,.home-travel-date{display:grid;min-width:0}
+.home-travel-identity small,.home-travel-date small{color:var(--muted);font-size:var(--text-micro);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.home-travel-identity b,.home-travel-route{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.home-travel-identity b{font-size:var(--text-card-title);line-height:var(--leading-heading)}
+.home-travel-route{color:var(--muted);font-size:var(--text-label);font-weight:600}
+.home-travel-countdown{display:flex;align-items:baseline;gap:var(--space-1);white-space:nowrap}
+.home-travel-countdown strong{font-size:var(--text-section-title);line-height:1;letter-spacing:-.035em}
+.home-travel-countdown span{color:var(--muted);font-size:var(--text-micro);font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.home-travel-date time{font-size:var(--text-label);font-weight:600;white-space:nowrap}
+.home-travel-open{min-height:var(--control-h);white-space:nowrap}
+@media(max-width:1050px){.home-travel-strip{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) auto auto}.home-travel-open{grid-column:4}.home-travel-date{grid-column:3}.home-travel-countdown{grid-column:3;grid-row:1}.home-travel-date{grid-row:2}.home-travel-open{grid-row:1 / span 2}.home-travel-strip{grid-template-rows:auto auto}}
+@media(max-width:780px){.home-travel-strip{grid-template-columns:minmax(0,1fr) auto;gap:var(--space-3);padding:var(--space-4)}.home-travel-identity{grid-column:1 / -1}.home-travel-route{grid-column:1 / -1}.home-travel-countdown,.home-travel-date,.home-travel-open{grid-row:auto;grid-column:auto}.home-travel-open{justify-self:end}}
+@media(max-width:420px){.home-travel-strip{grid-template-columns:1fr}.home-travel-identity,.home-travel-route,.home-travel-countdown,.home-travel-date,.home-travel-open{grid-column:1}.home-travel-open{justify-self:start}}

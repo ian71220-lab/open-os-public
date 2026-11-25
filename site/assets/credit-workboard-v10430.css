@@ -1,0 +1,13 @@
+/* Reuse user-authored recommended uses as a compact credit-card list filter. */
+#app .credit-use-filters{margin:0 0 16px;min-width:0}
+#app .credit-use-filters h2{margin:0 0 10px;color:var(--muted);font-size:var(--text-label);font-weight:700;letter-spacing:.08em}
+#app .credit-use-filter-list{display:flex;gap:8px;flex-wrap:wrap}
+#app .credit-use-filter{min-height:40px;padding:8px 12px;border:1px solid var(--line);border-radius:7px;background:var(--panel);color:var(--text);font:inherit;font-size:var(--text-small);line-height:1.3;cursor:pointer}
+#app .credit-use-filter.is-active{border-color:var(--link-color);background:var(--accent-soft);font-weight:650}
+#app .credit-use-filter:focus-visible{outline:2px solid var(--focus-color);outline-offset:2px}
+#app .credit-use-filter-status{margin:0;color:var(--muted);font-size:var(--text-label)}
+#app .credit-use-filter-status:empty{display:none}
+#app .credit-card-preview[hidden]{display:none}
+/* Workboard summaries are titles; details remain in their original modules. */
+.ian-workboard-item{gap:0}
+@media(pointer:coarse){#app .credit-use-filter{min-height:44px}}

@@ -1,0 +1,25 @@
+/* v1.0.4.39: task row ⋯ menu (destructive action moved out of the row), guided empty states, planner chip counts. */
+#app:has(>.tasks-operational) .task-item{grid-template-columns:auto minmax(0,1fr) auto auto}
+#app:has(>.tasks-operational) .task-row-menu{position:relative;grid-column:4;justify-self:end;align-self:center}
+@media (max-width:780px){
+  #app:has(>.tasks-operational) .task-item{grid-template-columns:auto minmax(0,1fr) auto}
+  #app:has(>.tasks-operational) .task-row-menu{grid-column:3;grid-row:1 / span 2;align-self:start}
+}
+#app:has(>.tasks-operational) .task-row-menu>summary{list-style:none;display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--line);border-radius:var(--radius-pill);background:var(--panel);color:var(--muted);cursor:pointer}
+#app:has(>.tasks-operational) .task-row-menu>summary::-webkit-details-marker{display:none}
+#app:has(>.tasks-operational) .task-row-menu>summary:hover{color:var(--text);border-color:var(--muted)}
+#app:has(>.tasks-operational) .task-row-menu>summary:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+#app:has(>.tasks-operational) .task-row-menu-panel{position:absolute;right:0;top:calc(100% + 6px);z-index:5;min-width:140px;padding:6px;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--panel);box-shadow:0 8px 24px rgb(0 0 0 / .14)}
+#app:has(>.tasks-operational) .danger-menu-item{display:block;width:100%;min-height:40px;padding:8px 12px;border:0;border-radius:8px;background:none;color:var(--danger);font:inherit;text-align:left;cursor:pointer}
+#app:has(>.tasks-operational) .danger-menu-item:hover,#app:has(>.tasks-operational) .danger-menu-item:focus-visible{background:color-mix(in srgb,var(--danger) 10%,var(--panel))}
+/* The calendar's week panel never offered delete on rows; keep the menu out of it too. */
+#app:has(>.calendar-operational) .task-row-menu{display:none}
+
+#app:has(>.tasks-operational) .task-empty{display:grid;justify-items:start;gap:6px;padding:16px;border:1px dashed var(--line);border-radius:var(--radius-lg);background:var(--panel-2);color:var(--muted);font-size:var(--text-small)}
+#app:has(>.tasks-operational) .task-empty strong{color:var(--text);font-size:var(--text-body)}
+#app:has(>.tasks-operational) .task-empty .secondary-btn{margin-top:4px}
+
+#app:has(>.tasks-operational) .task-planner-filters .filter-chip{display:inline-flex;align-items:center;gap:8px}
+#app:has(>.tasks-operational) .task-planner-filters .filter-chip small{min-width:22px;padding:1px 7px;border-radius:999px;background:var(--panel-3);color:var(--muted);text-align:center;font-variant-numeric:tabular-nums}
+#app:has(>.tasks-operational) .task-planner-filters .filter-chip.active small{background:var(--accent-soft)}
+#app:has(>.tasks-operational) .task-planner-filters .filter-chip:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
